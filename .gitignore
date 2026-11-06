@@ -5,6 +5,14 @@ __pycache__/
 
 firmware-research/evidence/
 .venv/
+.tools/
+build/
+.zig-cache/
+*.obj
+*.o
+*.lib
+*.a
+*.pdb
 .publication-check-path
 node_modules/
 *.pyc
@@ -32,6 +40,11 @@ drivers/
 research-encdr/
 controller-editor-research/
 docs/*.json
+!docs/PAD-DETECTOR-VALIDACAO.json
+!docs/PAD-STREAM-VALIDACAO.json
+!docs/MIDI-OUTPUT-VALIDACAO.json
+!docs/HOST-VALIDACAO.json
+!docs/SUPERVISION-VALIDACAO.json
 docs/*.jsonl
 docs/*.png
 docs/templates-ni/

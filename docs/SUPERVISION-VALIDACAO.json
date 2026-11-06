@@ -1,0 +1,41 @@
+{
+  "real_dry_hid_session": {
+    "reports": 4499,
+    "max_queue_age_us": 20246,
+    "reason": "duration complete",
+    "clean_stop": true,
+    "reader_exited": true,
+    "started": true,
+    "final_status": {
+      "phase": "stopped",
+      "reason": "explicit stop",
+      "queued": 0,
+      "possible_notes": 0,
+      "blocked": false,
+      "input_generation": 1,
+      "output_generation": 2,
+      "last_error": null
+    },
+    "ok": true,
+    "mode": "dry-run-memory-only",
+    "midi_port_opened": false,
+    "parameters_are_experimental": true,
+    "real_midi_messages_sent": 0,
+    "simulated_note_on": 0,
+    "simulated_note_off": 0,
+    "unresolved_routes": []
+  },
+  "fake_worker_tests": 9,
+  "fake_runtime_tests": 6,
+  "supervised_midi_open_close": {
+    "port": "MIKRO MOD FL",
+    "worker_exited": true,
+    "note_messages_sent": 0
+  },
+  "live_musical_test": false,
+  "limits": [
+    "Queue age is measured after the HID read, not sensor/USB latency.",
+    "Parent processing time drives the detector; timing compression/jitter requires musical validation.",
+    "OS scheduling and process termination are not hard-real-time guarantees."
+  ]
+}

@@ -28,11 +28,29 @@ sem saturação nem atividade vizinha acima do limiar diagnóstico de 100.
 Não tratar esse limiar como configuração musical calibrada ou equiparar
 picos manuais diferentes a diferenças de sensibilidade.
 
-Próxima entrega: contratos de dados e um núcleo C portável para os algoritmos
-já traduzidos, começando por encoder e LEDs. Compile e teste no host, sem
-alegar que isso já compila para XMOS ou que é gravável. Mantenha a camada de
-portas/tiles separada e documente os sinais cuja função elétrica é inferida.
-Depois, progrida no detector dos pads e na investigação do toolchain XS1.
+O núcleo C99 já existe em core/: encoder, PWM, parser de amostras e detector
+experimental próprio de ataque/pico/soltura, com eventos NOTE_ON/OFF em memória.
+Leia core/README.md e core/PAD-DETECTOR.md e execute os testes de host antes de
+modificar. O replay local dos quatro cantos gerou 24 pares corretos, mas isso
+não calibra limiares, latência ou curva dos 16 pads. O adaptador C de fluxo já
+existe: leia core/PAD-STREAM.md; ordem, gaps, geração, watchdog e reconexão são
+testados offline. A fila/codificação MIDI também existe: leia core/MIDI-OUTPUT.md.
+Ela usa callback síncrono ainda simulado, com RETRY e entrega incerta; não há
+ACK do sintetizador. O backend WinMM e coordenador síncrono agora existem em
+host/: leia host/README.md. loopMIDI foi instalado, o usuário criou MIKRO MOD FL
+e confirmou sua entrada habilitada no FL. A porta passou em abertura/fechamento
+real sem mensagens de nota. Ainda não houve teste musical ao vivo.
+O leitor HID e a supervisão agora existem: leia host/SUPERVISION.md. O runner
+tools/run_host.py usa memória por padrão, processos separados e limites de buffer,
+idade e duração. A leitura real sem saída passou; o modo live ainda não foi
+ensaiado musicalmente. A próxima entrega é um teste curto combinado com o operador:
+evitar entrada NI duplicada no FL, selecionar instrumento e confirmar contagem.
+Preservar endpoint, sessões e limpeza; não abrir destino arbitrário ou tratar
+sucesso da API como ACK físico. Pressão contínua e calibração completa seguem pendentes.
+Preserve o caminho NI/FL já funcional e não emita notas de teste para um projeto
+aberto sem alinhar o ensaio com o operador. Não aplicar ganhos inferidos de força
+manual nem afirmar que o build de host compila para XMOS ou é gravável.
+Mantenha portas/tiles separados e a pesquisa do toolchain XS1 como item distinto.
 
 Use somente evidência existente ou documentação primária para fatos de hardware.
 Classifique achados como observados, reconstruídos ou hipóteses. Verificadores

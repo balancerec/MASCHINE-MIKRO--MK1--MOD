@@ -28,6 +28,25 @@ def paths():
     calibration.js hardware.js display.js physical-controls.js fl-studio.js presets.js'''.split()]
     result += [p.relative_to(ROOT).as_posix() for p in
                sorted((ROOT/'firmware-research/fw55-analysis/architecture').glob('*.md'))]
+    result += ['CMakeLists.txt', 'core/README.md', 'core/include/mk1_core.h',
+               'core/src/mk1_core.c', 'core/tests/test_core.c', 'core/tests/compare_models.py',
+               'tools/test_core.py', 'tools/fetch_host_compiler.py']
+    result += ['core/src/mk1_pad.c', 'core/tests/test_pad.c', 'core/tests/pad_native.py',
+               'core/tests/test_pad_detector.py', 'core/PAD-DETECTOR.md',
+               'tools/replay_pad_detector.py', 'docs/PAD-DETECTOR-VALIDACAO.json']
+    result += ['core/src/mk1_stream.c', 'core/tests/test_pad_stream.py', 'core/PAD-STREAM.md',
+               'tools/replay_pad_stream.py', 'docs/PAD-STREAM-VALIDACAO.json']
+    result += ['core/src/mk1_midi.c', 'core/tests/midi_native.py', 'core/tests/test_midi_output.py',
+               'core/MIDI-OUTPUT.md', 'docs/MIDI-OUTPUT-VALIDACAO.json']
+    result += ['host/README.md', 'host/mk1_host/__init__.py', 'host/mk1_host/native.py',
+               'host/mk1_host/winmm.py', 'host/mk1_host/coordinator.py', 'host/mk1_host/memory.py',
+               'host/tests/test_winmm.py', 'host/tests/test_coordinator.py',
+               'tools/midi_ports.py', 'tools/replay_host.py', 'docs/HOST-VALIDACAO.json']
+    result += ['host/mk1_host/supervised.py', 'host/mk1_host/hid_reader.py',
+               'host/mk1_host/midi_worker.py', 'host/mk1_host/runtime.py',
+               'host/tests/test_supervised.py', 'host/tests/test_runtime.py',
+               'host/SUPERVISION.md', 'tools/run_host.py', 'tools/check_midi_worker.py',
+               'docs/SUPERVISION-VALIDACAO.json']
     return sorted(set(result))
 
 def main():

@@ -1,0 +1,66 @@
+{
+  "capture_id": "pad-sensitivity-20261105-213841",
+  "capture_sha256": "5273de4dbfb8f44f126fe717b09f382ba0b675480659b1857a9f978df707c53b",
+  "parameters": {
+    "midi_simulated": true,
+    "attack": 120,
+    "release": 60,
+    "full_scale": 4095,
+    "peak_us": 10000,
+    "release_us": 10000,
+    "retrigger_us": 30000,
+    "max_gap_us": 250000
+  },
+  "reports_replayed": 40969,
+  "phase_counts": {
+    "1": {
+      "note_on": {
+        "1": 6
+      },
+      "note_off": {
+        "1": 6
+      }
+    },
+    "2": {
+      "note_on": {
+        "4": 6
+      },
+      "note_off": {
+        "4": 6
+      }
+    },
+    "3": {
+      "note_on": {
+        "13": 6
+      },
+      "note_off": {
+        "13": 6
+      }
+    },
+    "4": {
+      "note_on": {
+        "16": 6
+      },
+      "note_off": {
+        "16": 6
+      }
+    }
+  },
+  "simulated_midi": {
+    "backend": "in-memory acceptance, no MIDI port opened",
+    "note_on": 24,
+    "note_off": 24,
+    "active_at_end": 0,
+    "physical_acknowledgement": false
+  },
+  "hardware_access": false,
+  "physical_midi_sent": false,
+  "fault_tests": 11,
+  "randomized_fault_operations": 2000,
+  "limits": [
+    "Host-arrival microsecond timebase; no physical latency measurement.",
+    "Host sequence assigned to capture rows; USB loss before capture is not observable.",
+    "Trial parameters are not validated calibration defaults.",
+    "Synchronous fake backend only; no OS MIDI port or physical delivery acknowledgement."
+  ]
+}
