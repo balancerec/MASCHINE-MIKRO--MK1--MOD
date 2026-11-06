@@ -24,7 +24,7 @@ As etapas 5–7 podem receber pesquisa offline em paralelo conceitual, mas não 
 
 ## Backlog imediato
 
-- [ ] Validar o pacote público em uma pasta limpa, sem presets/firmware/capturas locais.
+- [x] Validar o pacote público em uma pasta limpa, sem presets/firmware/capturas locais: build, 45 controles e testes offline conferidos na publicação inicial.
 - [ ] Criar contratos de dados para amostra de pad, evento musical, quadro de LEDs e atualização de display.
 - [ ] Extrair o núcleo C portável dos modelos já validados; começar por encoder e PWM.
 - [ ] Definir fixtures sintéticas e físicas mínimas com proveniência, sem incluir bytes de executáveis NI.

@@ -41,20 +41,21 @@ def main():
     for name in names:
         path = ROOT/name
         assert path.is_file() and not path.is_symlink(), name
-        data = path.read_bytes()
-        content = data.decode('utf-8')
+        content = path.read_bytes().decode('utf-8').replace('\r\n', '\n')
+        data = content.encode('utf-8')
         assert len(data) < 100000, name
         assert ('-----BEGIN '+'PRIVATE KEY-----') not in content, name
         records.append({'path': name, 'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()})
         tree.append({'path': name, 'mode': '100644', 'type': 'blob', 'content': content})
     manifest = ROOT/'publication-manifest.json'
     result = {'scope': 'Own source, authored research reports and reduced physical fixture; no NI firmware or installers',
+              'hash_representation': 'UTF-8 with LF line endings; independent of working-copy CRLF conversion',
               'files': records, 'manifest_self_excluded_from_hashes': True}
     if args.verify:
         assert json.loads(manifest.read_text(encoding='utf-8')) == result
         print(f'Publication manifest verified: {len(records)} files, {sum(r["bytes"] for r in records)} bytes.')
         return
-    manifest.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    manifest.write_bytes((json.dumps(result, ensure_ascii=False, indent=2)+'\n').encode('utf-8'))
     if args.tree_json:
         tree.append({'path': manifest.name, 'mode': '100644', 'type': 'blob', 'content': manifest.read_text(encoding='utf-8')})
         print(json.dumps(tree, ensure_ascii=True))

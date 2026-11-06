@@ -1,5 +1,6 @@
 {
   "scope": "Own source, authored research reports and reduced physical fixture; no NI firmware or installers",
+  "hash_representation": "UTF-8 with LF line endings; independent of working-copy CRLF conversion",
   "files": [
     {
       "path": ".gitattributes",
@@ -13,13 +14,13 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 866,
-      "sha256": "f28480bfc9d63d8980b4ce448879e6ca2833bac16f86a49fd327e2348382fa05"
+      "bytes": 820,
+      "sha256": "d03c92abd6becaae3b305a2fdc45b2ccba676511e8ddc187e5a2e1f4968ae82f"
     },
     {
       "path": "16-PADS.md",
-      "bytes": 5722,
-      "sha256": "22b4a453d4d8fc57ded709ee171cec569f59e081b0ce1bc0e9a39b35bed41e44"
+      "bytes": 5650,
+      "sha256": "b13a1b41a80e5cd394111e9ae416570f372547fe9364fd7fe9b2c7683372d0e3"
     },
     {
       "path": "AGENTS.md",
@@ -43,8 +44,8 @@
     },
     {
       "path": "PLANO.md",
-      "bytes": 5055,
-      "sha256": "5195aa0e0e0c14184c71b078908760623586e0f39915aea690288c1d65f84b18"
+      "bytes": 5128,
+      "sha256": "24f2d4f8f0230b44cf4b402867075b3ef48fd7bd01c931071232951b8c4279c4"
     },
     {
       "path": "PROMPT-CONTINUIDADE.md",
@@ -73,8 +74,8 @@
     },
     {
       "path": "control-studio/dist/fl-studio.js",
-      "bytes": 6916,
-      "sha256": "6122f943d83c71b494aa69f105b6f197270fb85597860becb8979cc98e0ad888"
+      "bytes": 6879,
+      "sha256": "a2c03edcc7a82449235f89b44c27c75c6a760c6e1082b6f98e45dfd8f21d2807"
     },
     {
       "path": "control-studio/dist/hardware.css",
@@ -83,13 +84,13 @@
     },
     {
       "path": "control-studio/dist/hardware.js",
-      "bytes": 11386,
-      "sha256": "e798e1d44b293d8ef6e8e7e6cc68428fd68479d60b026ec91e9e1f2f8937415d"
+      "bytes": 11307,
+      "sha256": "5c31824201e6a6e2ed3c1233dc3ba8618831f7556398c5a1d15eb34b18d4fa57"
     },
     {
       "path": "control-studio/dist/index.html",
-      "bytes": 5509,
-      "sha256": "03039d19c4d7ef3256857337cc29e51ad147cbd43f816ff4b77c2c5528b86328"
+      "bytes": 5503,
+      "sha256": "9c5b9afc5d34f08420318bea157a69a54d2206ee8416f6b273ca119d05c20602"
     },
     {
       "path": "control-studio/dist/physical-controls.js",
@@ -108,13 +109,13 @@
     },
     {
       "path": "control-studio/src/app.js",
-      "bytes": 9625,
-      "sha256": "a2843e2f7fcd5df620376ee1694a55d65beb4fd99152865e14003a037a0ed5f4"
+      "bytes": 9591,
+      "sha256": "9923dc47d77fab5fea5cc12f7858fc428a381be185cb49b4434d3baba5b309ba"
     },
     {
       "path": "control-studio/src/physical-calibration.json",
-      "bytes": 6012,
-      "sha256": "12111c5a490f618c5cf94214bb1ee4b40a48fdd5833b32fdeb7f95a824be959d"
+      "bytes": 5662,
+      "sha256": "d7c6a7586ffba993fa8a4dc7a6c9177492f93bb057872c1e7e6a332d84ea978c"
     },
     {
       "path": "docs/ARQUITETURA-PROPOSTA.md",
@@ -168,8 +169,8 @@
     },
     {
       "path": "firmware-research/fw55-analysis/architecture/ARQUITETURA.md",
-      "bytes": 8037,
-      "sha256": "712567dcf2c44a3d308c747116bc5c1902ba11c3dbaa4745531b3083f48ba42e"
+      "bytes": 7913,
+      "sha256": "a1adfaffc17dc4df59b481d486861466ee0a0ec672c5c030d7a63361e514b6ec"
     },
     {
       "path": "firmware-research/fw55-analysis/architecture/BOOT-CONTAINER.md",
@@ -188,8 +189,8 @@
     },
     {
       "path": "firmware-research/fw55-analysis/architecture/F8-DISPLAY.md",
-      "bytes": 5285,
-      "sha256": "181a75895f334bebcf095cae907fbc8918ba5f6fb9ff91bc85e44a8a0408ad75"
+      "bytes": 5210,
+      "sha256": "3eefe360798c68cda443ada25cd5417d16b48fefcd37405caab58f69b6a9b1a9"
     },
     {
       "path": "firmware-research/fw55-analysis/architecture/FLASH-BACKEND.md",
@@ -293,8 +294,8 @@
     },
     {
       "path": "fl-integration/device_MIKRO_16_Pads.py",
-      "bytes": 6568,
-      "sha256": "15acebd58ab91ebcaec0bb427421c25fd6c22c954147d744074c5979edb28881"
+      "bytes": 6567,
+      "sha256": "2cc1c750bc53d8b370eec476513148dd1d8f6c3b95eb9442c8c615123396b07c"
     },
     {
       "path": "integrar_presets.py",
@@ -353,8 +354,8 @@
     },
     {
       "path": "tests/fixtures/encoder-ten-right.json",
-      "bytes": 1198,
-      "sha256": "d498401e69d5d6a9b67f0ad1a66a528610842b690be249f1d32fbdbdb966824b"
+      "bytes": 1082,
+      "sha256": "e4e67776275d8fb3032431bf7109d70cd0b3e6d782f5d4cfb15dc1bd78a6deac"
     },
     {
       "path": "tools/check_public_editor.cjs",
@@ -363,8 +364,8 @@
     },
     {
       "path": "tools/prepare_publication.py",
-      "bytes": 3541,
-      "sha256": "4459036a25b419d3afea2cdefefbbb69a3cb5ed8f1a6eff04083b22d73e1343f"
+      "bytes": 3695,
+      "sha256": "403c88d63d03e38232e0bb008b6efd51971d3ec10dcabf3fcfb5aafe73b06e30"
     }
   ],
   "manifest_self_excluded_from_hashes": true
