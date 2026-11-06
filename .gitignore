@@ -5,6 +5,14 @@ __pycache__/
 
 firmware-research/evidence/
 .venv/
+.tools/
+build/
+.zig-cache/
+*.obj
+*.o
+*.lib
+*.a
+*.pdb
 .publication-check-path
 node_modules/
 *.pyc

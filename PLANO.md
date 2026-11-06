@@ -12,7 +12,7 @@ Separar o editor de parâmetros, o processamento musical no computador e a futur
 |---|---|---|---|
 | 0 — Base pública | README, plano, prompt, seleção de fontes, testes e CI | Clone limpo abre editor básico e passa testes sem arquivos privados | Esta publicação |
 | 1 — Especificação rastreável | Consolidar relatórios HID, portas locais, argumentos e evidências | Cada campo/sinal tem origem e nível de confiança; sem atribuir tile/pino não provado | Parcial; vários serviços reconstruídos |
-| 2 — Núcleo independente de hardware | Biblioteca portável de encoder, LEDs, display e empacotamento de amostras | Testes determinísticos, comparações com modelos e capturas mínimas; sem APIs USB no núcleo | Encoder/PWM em Python; portar para C depois |
+| 2 — Núcleo independente de hardware | Biblioteca portável de encoder, LEDs, display e empacotamento de amostras | Testes determinísticos, comparações com modelos e capturas mínimas; sem APIs USB no núcleo | Parcial: encoder/PWM e parser HID em C99 validados no host; driver LCD e HAL pendentes |
 | 3 — Processamento dos pads | Máquina de ataque, pico, release, pressão, curvas e limiares por pad | Uma batida gera um disparo, release correto, curvas monotônicas, ausência de notas presas e disparos duplicados | Padronizar datasets leves/fortes dos 16 pads |
 | 4 — Saída musical no host | Integrar núcleo ao editor e a um transporte MIDI explícito | Só os 16 pads geram notas; botões fazem funções; teste real de FL e reconexão | Fluxo NI/FL existente; nova ponte MIDI ainda não implementada |
 | 5 — Toolchain XMOS | Identificar ferramenta compatível com XS1 L2, licença e formato de saída | Exemplo mínimo compilado e reproduzível; versão e alvo documentados; sem gravar | Pendente; código de pedido exato e tile IDs não fechados |
@@ -25,9 +25,9 @@ As etapas 5–7 podem receber pesquisa offline em paralelo conceitual, mas não 
 ## Backlog imediato
 
 - [x] Validar o pacote público em uma pasta limpa, sem presets/firmware/capturas locais: build, 45 controles e testes offline conferidos na publicação inicial.
-- [ ] Criar contratos de dados para amostra de pad, evento musical, quadro de LEDs e atualização de display.
-- [ ] Extrair o núcleo C portável dos modelos já validados; começar por encoder e PWM.
-- [ ] Definir fixtures sintéticas e físicas mínimas com proveniência, sem incluir bytes de executáveis NI.
+- [x] Criar contratos iniciais de dados para amostra de pad, evento musical, quadro de LEDs e atualização de display; evento musical/display ainda sem processador/driver.
+- [x] Extrair o núcleo C portável de encoder e PWM e comparar builds host com os modelos Python.
+- [x] Definir fixture física mínima do encoder e relatórios de pads sintéticos, sem bytes de executáveis NI; fixtures físicas dos pads ainda pendentes.
 - [ ] Definir detector de ataque com histerese e janela de pico antes de escolher curva de velocity.
 - [ ] Capturar batidas leves e fortes dos demais pads em ensaios delimitados e registrar falhas de contagem.
 - [ ] Investigar toolchain XS1 L2 em fontes oficiais e testar um build mínimo local, sem acesso ao alvo.

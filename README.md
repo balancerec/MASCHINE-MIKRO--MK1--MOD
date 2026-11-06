@@ -2,7 +2,7 @@
 
 Pesquisa independente, editor de controles e preparação de uma implementação própria para a **Native Instruments MASCHINE MIKRO MK1**. Alvo normal USB `17CC:1110`; modo DFU observado `17CC:1112`. Não confundir com a MASCHINE grande ou com a MIKRO MK2/MK3.
 
-**Estado em 05/11/2026:** editor local e integração FL Studio funcionais na unidade de referência; rotinas de encoder e PWM dos LEDs traduzidas em modelos offline. **Ainda não existe uma firmware própria compilada e validada para gravação.** A imagem oficial de atualização não é um backup completo da unidade.
+**Estado em 06/11/2026:** editor local e integração FL Studio funcionais na unidade de referência; núcleo C99 de encoder/PWM e leitura de amostras compilado no host e comparado com os modelos Python. **Ainda não existe uma firmware própria compilada e validada para gravação no XMOS.** A imagem oficial de atualização não é um backup completo da unidade.
 
 ## Comece aqui
 
@@ -10,6 +10,7 @@ Pesquisa independente, editor de controles e preparação de uma implementação
 - [Prompt para continuar o projeto](PROMPT-CONTINUIDADE.md)
 - [Estado atual, evidências e lacunas](docs/ESTADO-ATUAL.md)
 - [Arquitetura pretendida](docs/ARQUITETURA-PROPOSTA.md)
+- [Núcleo C: contratos, build e testes](core/README.md)
 - [Materiais locais e fontes](docs/MATERIAIS-E-FONTES.md)
 - [Regras para alterações neste repositório](AGENTS.md)
 
@@ -49,6 +50,7 @@ Teste opcional de interface: instale dependências com `npm install`, instale Ed
 | `mikro_bridge.py` | Ponte HID/HTTP local existente |
 | `fl-integration/` | Script de integração com as APIs do FL Studio |
 | `firmware-research/` | Modelos, verificadores, análises e documentação da reconstrução |
+| `core/` | Núcleo C99 sem acesso a hardware; encoder, PWM, amostras e contratos |
 | `tests/fixtures/` | Amostras mínimas de entrada para testes sem hardware |
 
 Não há gravação automática de firmware, execução de capturas físicas na CI nem cópia de firmware proprietária neste pacote. A seleção pública está registrada em `publication-manifest.json`. Documentos de pesquisa registram etapas históricas; para decisões atuais, prevalecem `PLANO.md` e `docs/ESTADO-ATUAL.md`.

@@ -4,18 +4,18 @@
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 120,
-      "sha256": "a163751dd0b9da8ea0589164a61dfc3e94bd43ff6e854138853bbc5e51273ae7"
+      "bytes": 179,
+      "sha256": "27d7b69e8ca7e947d34f50b32529968417b24b35b7f056d6e20e6aa187e2fd7b"
     },
     {
       "path": ".github/workflows/offline.yml",
-      "bytes": 495,
-      "sha256": "6250da65802ba42693f33c8733965dfa84636a24f0ef036662efd42ea734cb27"
+      "bytes": 908,
+      "sha256": "8709a9cd4476d93db9d9b9e522d738bc6ea408c0b47c9626038b34564f1a4568"
     },
     {
       "path": ".gitignore",
-      "bytes": 820,
-      "sha256": "d03c92abd6becaae3b305a2fdc45b2ccba676511e8ddc187e5a2e1f4968ae82f"
+      "bytes": 873,
+      "sha256": "30e6e3bd4bb88fda50d60f048e569008a5989765d74094a41c652fc5b38647fa"
     },
     {
       "path": "16-PADS.md",
@@ -26,6 +26,11 @@
       "path": "AGENTS.md",
       "bytes": 1306,
       "sha256": "6f9190f3220c6e71cffae8f6265723fd1350e3a54215cae9945099f13ef65bd3"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "bytes": 1119,
+      "sha256": "badf0ddec6785accf722bb1559395adc14877999dee7d2173b5c778daa2e1dff"
     },
     {
       "path": "CONEXAO-USB.md",
@@ -44,18 +49,18 @@
     },
     {
       "path": "PLANO.md",
-      "bytes": 5128,
-      "sha256": "24f2d4f8f0230b44cf4b402867075b3ef48fd7bd01c931071232951b8c4279c4"
+      "bytes": 5287,
+      "sha256": "8c64f0a328566c4cb3ee791716101020dcba8413df204c4dd3331fa7d17c1c79"
     },
     {
       "path": "PROMPT-CONTINUIDADE.md",
-      "bytes": 3152,
-      "sha256": "3c464f0025779f5321166f7ffa71cbb912f0dee8cc46739a4fc54d30ce5ae434"
+      "bytes": 3363,
+      "sha256": "306a16304ebff9dc1d8e63caedb9f92d2f257c8c1d837bdddd0ce236c3581834"
     },
     {
       "path": "README.md",
-      "bytes": 4070,
-      "sha256": "214b46a2347efad0134c4a0f9762a038e70b22fb7f5a4b9fa469a9fff4f533ca"
+      "bytes": 4256,
+      "sha256": "65d98451824400106f83d140310e6fc956ba76d9d3c468f317d271a4f5d6bfbd"
     },
     {
       "path": "build_editor.py",
@@ -118,14 +123,39 @@
       "sha256": "d7c6a7586ffba993fa8a4dc7a6c9177492f93bb057872c1e7e6a332d84ea978c"
     },
     {
+      "path": "core/README.md",
+      "bytes": 4077,
+      "sha256": "c6189370cb97327971baf25413eb8102ee75d5f14cc6c1a63cee83caa965494d"
+    },
+    {
+      "path": "core/include/mk1_core.h",
+      "bytes": 3908,
+      "sha256": "dbaad70f1ee723f37be44db07905f4ee944a52bdf66ea1920b4824660ea10b5f"
+    },
+    {
+      "path": "core/src/mk1_core.c",
+      "bytes": 5246,
+      "sha256": "8f71cdff1328b17008511e159f1ad736055478a374cbe1f3c1a0f666308d9fa0"
+    },
+    {
+      "path": "core/tests/compare_models.py",
+      "bytes": 6987,
+      "sha256": "97131a3399147da25199888e1776b3b98dd75aaddc6dc9e693e4bb0e6fd447b8"
+    },
+    {
+      "path": "core/tests/test_core.c",
+      "bytes": 2212,
+      "sha256": "1f15c9afbefc366d400107a058123fbe29f37d6bf7315b30a8c975f2d7167bd0"
+    },
+    {
       "path": "docs/ARQUITETURA-PROPOSTA.md",
-      "bytes": 1287,
-      "sha256": "6e9d8454bc5b80eed5bedb617e56242aae6a3b2fe4d04077f3cf68c765fde64f"
+      "bytes": 1442,
+      "sha256": "844e1fe02e7b01332d257a3a4a56b37a4bd599f4b8c1c70540ccd30bce57293a"
     },
     {
       "path": "docs/ESTADO-ATUAL.md",
-      "bytes": 3039,
-      "sha256": "e25a54e1edfc29cc102aaf7840d0c25fac27f22b91b7199bb00b41749b25da1d"
+      "bytes": 3712,
+      "sha256": "0f67df5a6a3a9af61a1439ddea9e800bb32d4f00a71a11c5236d91a47ee711a8"
     },
     {
       "path": "docs/MATERIAIS-E-FONTES.md",
@@ -363,9 +393,19 @@
       "sha256": "61eb0e332956ef0a385eaec6cafef06c449a523c69309ecbc26ff80d1b36e114"
     },
     {
+      "path": "tools/fetch_host_compiler.py",
+      "bytes": 1032,
+      "sha256": "8c2a58f57ce93f22b1d8d85d2afb2b49e41d5817a8b793cb73e0157cd0b7a167"
+    },
+    {
       "path": "tools/prepare_publication.py",
-      "bytes": 3695,
-      "sha256": "403c88d63d03e38232e0bb008b6efd51971d3ec10dcabf3fcfb5aafe73b06e30"
+      "bytes": 3938,
+      "sha256": "a3447ac9c36ae2637f90ae2ef9f6e3606ea0411fa304449c08fce2b903a878c8"
+    },
+    {
+      "path": "tools/test_core.py",
+      "bytes": 1484,
+      "sha256": "f112a8fe62c121cbfbd1ae77ba2ac6afd73a20010714347d9b045f6798e93e88"
     }
   ],
   "manifest_self_excluded_from_hashes": true

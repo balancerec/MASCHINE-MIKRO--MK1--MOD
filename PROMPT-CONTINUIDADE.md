@@ -28,11 +28,14 @@ sem saturação nem atividade vizinha acima do limiar diagnóstico de 100.
 Não tratar esse limiar como configuração musical calibrada ou equiparar
 picos manuais diferentes a diferenças de sensibilidade.
 
-Próxima entrega: contratos de dados e um núcleo C portável para os algoritmos
-já traduzidos, começando por encoder e LEDs. Compile e teste no host, sem
-alegar que isso já compila para XMOS ou que é gravável. Mantenha a camada de
-portas/tiles separada e documente os sinais cuja função elétrica é inferida.
-Depois, progrida no detector dos pads e na investigação do toolchain XS1.
+O núcleo C99 inicial já existe em core/: encoder, PWM e parser de amostras,
+com contratos de evento musical e LCD. Leia core/README.md e execute os testes
+de host antes de modificar. A próxima entrega é o detector de ataque dos pads,
+com histerese, janela de pico e release; começar por dados sintéticos e fixtures
+validadas, sem aplicar ganhos inferidos de força manual. Não alegar que o build
+de host já compila para XMOS ou é gravável. Mantenha a camada de portas/tiles
+separada e os sinais inferidos documentados. A pesquisa do toolchain XS1 continua
+como item distinto, sem gravar o alvo.
 
 Use somente evidência existente ou documentação primária para fatos de hardware.
 Classifique achados como observados, reconstruídos ou hipóteses. Verificadores

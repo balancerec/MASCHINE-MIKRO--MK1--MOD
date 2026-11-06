@@ -1,4 +1,4 @@
-# Estado atual — 05/11/2026
+# Estado atual — 06/11/2026
 
 Esta é a referência atual; os relatórios em `firmware-research/` conservam detalhes e histórico.
 
@@ -21,9 +21,15 @@ Esta é a referência atual; os relatórios em `firmware-research/` conservam de
 - PWM LEDs: 13.560 passos comparados em 339 cenários, cobrindo 693 endereços de instrução. É um interpretador limitado, não um emulador completo.
 - Boot e caminho DFU do atualizador estudados; upload DFU da unidade retornou zero bytes. CRC correto não comprova aceitação/boot de imagem modificada.
 
+## Implementado no host em C99
+
+`core/` contém encoder bruto, leitura do encoder HID01, PWM de 64 posições e parser HID20 com tags de canal. Sem heap, USB, serviço NI ou emissão MIDI. Contratos de evento musical e atualização LCD declarados, ainda sem processamento/driver.
+
+Build local Windows com Zig cc 0.14.1, avisos tratados como erros. Comparações C/Python: 40.960 passos individuais e 10.000 amostras sequenciais do encoder; 339 cenários/13.560 eventos PWM; 256 pares HID; fixture física de dez passos e dois cliques; 100 relatórios de pads sintéticos. Isso testa equivalência com os modelos, não inicialização no alvo.
+
 ## Lacunas e entregas inexistentes
 
-Sem backup integral da flash, bootloader específico recuperado, OTP lida, ferramenta de recuperação comprovada, toolchain de alvo validado ou firmware própria compilada. Sem esquema completo, identificação inequívoca do ADC/controlador LCD ou mapeamento físico de tiles/pinos. Ainda não há núcleo C nem processamento musical próprio completo dos pads.
+Sem backup integral da flash, bootloader específico recuperado, OTP lida, ferramenta de recuperação comprovada, toolchain de alvo validado ou firmware própria compilada para XMOS. Sem esquema completo, identificação inequívoca do ADC/controlador LCD ou mapeamento físico de tiles/pinos. O núcleo C existe no host, mas ainda não há processamento musical próprio completo dos pads.
 
 Não há dados padronizados dos 16 pads para curva global de velocity. Os dados pós-limpeza não quantificam melhora sem um ensaio anterior equivalente. O monitor HID da página e o script MIDI do FL são caminhos diferentes; a ponte não substitui o serviço NI como fonte MIDI.
 

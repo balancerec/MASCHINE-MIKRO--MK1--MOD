@@ -28,6 +28,9 @@ def paths():
     calibration.js hardware.js display.js physical-controls.js fl-studio.js presets.js'''.split()]
     result += [p.relative_to(ROOT).as_posix() for p in
                sorted((ROOT/'firmware-research/fw55-analysis/architecture').glob('*.md'))]
+    result += ['CMakeLists.txt', 'core/README.md', 'core/include/mk1_core.h',
+               'core/src/mk1_core.c', 'core/tests/test_core.c', 'core/tests/compare_models.py',
+               'tools/test_core.py', 'tools/fetch_host_compiler.py']
     return sorted(set(result))
 
 def main():
