@@ -30,7 +30,8 @@ As etapas 5–7 podem receber pesquisa offline em paralelo conceitual, mas não 
 - [x] Definir fixture física mínima do encoder e relatórios de pads sintéticos, sem bytes de executáveis NI; fixtures físicas dos pads ainda pendentes.
 - [x] Implementar detector experimental com histerese, janela de pico, soltura e velocity linear de ensaio; validação/calibração musical completa pendente.
 - [x] Implementar adaptador C do fluxo com sessão, ordenação, gaps, watchdog e limpeza; testes de falhas e replay offline concluídos, integração ao vivo pendente.
-- [ ] Definir transporte/fila de saída MIDI com entrega dos eventos de limpeza e tratamento de erros, antes de um ensaio ao vivo.
+- [x] Implementar fila/codificação MIDI e contrato de callback com RETRY/entrega incerta, limpeza e testes simulados; não há confirmação física de entrega.
+- [ ] Implementar backend MIDI do sistema operacional e coordenador do loop, com endpoint explícito e teste ao vivo combinado com o operador.
 - [ ] Capturar batidas leves e fortes dos demais pads em ensaios delimitados e registrar falhas de contagem.
 - [ ] Investigar toolchain XS1 L2 em fontes oficiais e testar um build mínimo local, sem acesso ao alvo.
 - [ ] Consolidar matriz de inicialização/clock/tile e a lista exata de incógnitas do boot.

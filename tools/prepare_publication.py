@@ -36,6 +36,8 @@ def paths():
                'tools/replay_pad_detector.py', 'docs/PAD-DETECTOR-VALIDACAO.json']
     result += ['core/src/mk1_stream.c', 'core/tests/test_pad_stream.py', 'core/PAD-STREAM.md',
                'tools/replay_pad_stream.py', 'docs/PAD-STREAM-VALIDACAO.json']
+    result += ['core/src/mk1_midi.c', 'core/tests/midi_native.py', 'core/tests/test_midi_output.py',
+               'core/MIDI-OUTPUT.md', 'docs/MIDI-OUTPUT-VALIDACAO.json']
     return sorted(set(result))
 
 def main():

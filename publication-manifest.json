@@ -14,8 +14,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 939,
-      "sha256": "fb983fda1cbbc761c6bb6261cb42666b5cb687c908a01f922d54380ad30cde2e"
+      "bytes": 972,
+      "sha256": "8457d28d712cffb77fae34834b15411f38461ebc8e2ac098e9187f8546580760"
     },
     {
       "path": "16-PADS.md",
@@ -29,8 +29,8 @@
     },
     {
       "path": "CMakeLists.txt",
-      "bytes": 1720,
-      "sha256": "a032426c762f75a00a29eebb5ce39f29c2b871cb510f8b38009909f09cac8f3c"
+      "bytes": 1934,
+      "sha256": "632c1f9139e934e0dee347f94c7a391f6e46979466a004e41d43e86271d57ae7"
     },
     {
       "path": "CONEXAO-USB.md",
@@ -49,13 +49,13 @@
     },
     {
       "path": "PLANO.md",
-      "bytes": 5723,
-      "sha256": "99521c3a136da2f774d086390a6226cc23f73f943f523e604e22bfcb39b118d4"
+      "bytes": 5898,
+      "sha256": "48e80ae28dd0df6505e2023aa3574eb339ba5e4b7b2eaca35eef1b6e92e52509"
     },
     {
       "path": "PROMPT-CONTINUIDADE.md",
-      "bytes": 3800,
-      "sha256": "b8d550eaa743a56beee46c27dc282860d4948b6dbb9d890818da3d9a7f1a8d2a"
+      "bytes": 4088,
+      "sha256": "95760f8c53f700568d89758f633ba47fb1d71d8210df5d765b7edf5fee0acd9d"
     },
     {
       "path": "README.md",
@@ -123,29 +123,39 @@
       "sha256": "d7c6a7586ffba993fa8a4dc7a6c9177492f93bb057872c1e7e6a332d84ea978c"
     },
     {
+      "path": "core/MIDI-OUTPUT.md",
+      "bytes": 5780,
+      "sha256": "75170179250d0f22bf5f6ce567c16e2c5a7251a6b03b653c00979ceab9f8fe3c"
+    },
+    {
       "path": "core/PAD-DETECTOR.md",
       "bytes": 4780,
       "sha256": "fc5f4d9c546f6553307639a3f122d2814b8f63eefd481140e43f315ca74de338"
     },
     {
       "path": "core/PAD-STREAM.md",
-      "bytes": 4853,
-      "sha256": "23a802ad240e6e7790cf95f082ef31190cad4cd173c96b914ae7dc88262c3727"
+      "bytes": 4923,
+      "sha256": "1afb02092778aafbafe9c6c9d9691a76e16ba6570c5e305f46874829fa78197d"
     },
     {
       "path": "core/README.md",
-      "bytes": 4364,
-      "sha256": "cdbf03f8e041dd6dbb0db917e25574a01be23f787b74e7b6bab43b09e2995951"
+      "bytes": 4616,
+      "sha256": "ec93961566527c677d4d442da64c1f522d396f04467b3d1e38db59288034d63b"
     },
     {
       "path": "core/include/mk1_core.h",
-      "bytes": 7831,
-      "sha256": "231de960485a0ee64cc522ed35f6a2e3909809e25c7fd913c6fd22d94eb12fae"
+      "bytes": 9984,
+      "sha256": "47307abafffcad1c93b65aa2aeca9d1b3d182f354f7a30fb70305cf2634df787"
     },
     {
       "path": "core/src/mk1_core.c",
       "bytes": 5246,
       "sha256": "8f71cdff1328b17008511e159f1ad736055478a374cbe1f3c1a0f666308d9fa0"
+    },
+    {
+      "path": "core/src/mk1_midi.c",
+      "bytes": 6313,
+      "sha256": "13f96bbcc4deb11245e070cf6832c3b660de86b989434f828c40f6fdce6a0375"
     },
     {
       "path": "core/src/mk1_pad.c",
@@ -163,6 +173,11 @@
       "sha256": "97131a3399147da25199888e1776b3b98dd75aaddc6dc9e693e4bb0e6fd447b8"
     },
     {
+      "path": "core/tests/midi_native.py",
+      "bytes": 1684,
+      "sha256": "70437ddba1734c0114ee9b5332cf19c67e80fbed13fc18714980ae847b7db71b"
+    },
+    {
       "path": "core/tests/pad_native.py",
       "bytes": 1834,
       "sha256": "0fb864ee0838b59c17395e55128e80f8be8cc924bd0ccd1678219b7e06197e2a"
@@ -171,6 +186,11 @@
       "path": "core/tests/test_core.c",
       "bytes": 2212,
       "sha256": "1f15c9afbefc366d400107a058123fbe29f37d6bf7315b30a8c975f2d7167bd0"
+    },
+    {
+      "path": "core/tests/test_midi_output.py",
+      "bytes": 9907,
+      "sha256": "e696e757d65d0beed64fade3c5130ad387b3237bc0e9343b6d026d84a68ecba5"
     },
     {
       "path": "core/tests/test_pad.c",
@@ -194,13 +214,18 @@
     },
     {
       "path": "docs/ESTADO-ATUAL.md",
-      "bytes": 5102,
-      "sha256": "f39dbec0fab2e49e7acc78a7cce3b021f49955139fad4ed41dce8d0d5f70b193"
+      "bytes": 5743,
+      "sha256": "334172298ac838cbc15f4305ad4cf2cba3e8b6d405cab709b62a67d2d7bb07f1"
     },
     {
       "path": "docs/MATERIAIS-E-FONTES.md",
       "bytes": 2798,
       "sha256": "6c5bb0bbbcc93712a254d51987d2d581347f0168731918841032b8b8e9f5f6ba"
+    },
+    {
+      "path": "docs/MIDI-OUTPUT-VALIDACAO.json",
+      "bytes": 1473,
+      "sha256": "e4c975208e118ec6074288d4355ea136cdb41344fd9928057fe45e6f8c326db8"
     },
     {
       "path": "docs/PAD-DETECTOR-VALIDACAO.json",
@@ -449,8 +474,8 @@
     },
     {
       "path": "tools/prepare_publication.py",
-      "bytes": 4359,
-      "sha256": "eeb561765bc1b9b6cb8e976ceaf7b74b66647c97c36321891037565241e3f524"
+      "bytes": 4533,
+      "sha256": "6dcd1a5550547522a2aade1e94628578760a2bbdad718b92708448b9c2660194"
     },
     {
       "path": "tools/replay_pad_detector.py",
@@ -459,13 +484,13 @@
     },
     {
       "path": "tools/replay_pad_stream.py",
-      "bytes": 3888,
-      "sha256": "a41c7f18a08c2369345470c9fc6b39c71e92bb3a7b621709a818e039e10ed019"
+      "bytes": 5455,
+      "sha256": "71a8f7b0ad4c7fc86046ec6960c627264c8505f91c07035f464237654ec873a2"
     },
     {
       "path": "tools/test_core.py",
-      "bytes": 1998,
-      "sha256": "a931ebc70684a7cb049a1c79c17671c2162ce33e64d2faaae5645e1da11378bf"
+      "bytes": 2128,
+      "sha256": "19dcbf3a519aba97edb2d43ac696f39161a624897091b82064707303a5c91322"
     }
   ],
   "manifest_self_excluded_from_hashes": true

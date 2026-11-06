@@ -33,6 +33,8 @@ Replay local de 40.969 relatórios da captura dos quatro cantos: 24 NOTE_ON e 24
 
 O adaptador C `mk1_stream.c` agora liga HID20 ao detector dos 16 canais, com geração de sessão, sequência atribuída no host, ordenação temporal, gaps e watchdog chamado pelo laço chamador. Onze testes incluem 4.000 operações aleatórias com falhas e verificação de balanço de notas. O caminho nativo completo repetiu 24 pares nos dados dos quatro cantos, sem notas pendentes antes de desconectar. Continua offline: não há loop USB/MIDI de produção nem garantia de entrega a um sintetizador. Resumo em `PAD-STREAM-VALIDACAO.json`.
 
+A fila em `mk1_midi.c` codifica NOTE_ON/OFF, limita 64 mensagens, acompanha possíveis notas e bloqueia novos ataques após entrega incerta. Um callback síncrono simulado modela aceitação, certeza de não envio e resultado incerto; não é backend WinMM/ALSA nem confirmação do sintetizador. Onze testes incluem 2.000 operações com falhas e um watchdog que cancela 15 ataques ainda não enviados depois de aceitar somente um. O replay completo gerou 24 mensagens NOTE_ON e 24 NOTE_OFF no receptor em memória, sem porta real. Resumo em `MIDI-OUTPUT-VALIDACAO.json`. Backend do sistema e coordenação de entrega continuam pendentes.
+
 ## Lacunas e entregas inexistentes
 
 Sem backup integral da flash, bootloader específico recuperado, OTP lida, ferramenta de recuperação comprovada, toolchain de alvo validado ou firmware própria compilada para XMOS. Sem esquema completo, identificação inequívoca do ADC/controlador LCD ou mapeamento físico de tiles/pinos. O núcleo C e o detector inicial existem no host; pressão contínua, integração MIDI e calibração musical completa dos pads continuam pendentes.

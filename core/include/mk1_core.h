@@ -170,6 +170,42 @@ MK1_API int mk1_pad_stream_frame(mk1_pad_stream *state, uint32_t generation,
  * A timeout disconnects; a fresh connect/generation is needed to resume. */
 MK1_API int mk1_pad_stream_poll(mk1_pad_stream *state, uint32_t tick, mk1_stream_events *events);
 
+enum {
+    MK1_MIDI_CAPACITY = 64, MK1_MIDI_INVALID = 0, MK1_MIDI_OK = 1,
+    MK1_MIDI_RETRY = 2, MK1_MIDI_UNCERTAIN = 3,
+    MK1_MIDI_FULL = 4, MK1_MIDI_RESET = 5
+};
+typedef struct { uint8_t bytes[3]; } mk1_midi_message;
+typedef struct {
+    mk1_midi_message queue[MK1_MIDI_CAPACITY];
+    uint8_t possible_notes[16][16]; /* channel, note bitset; may be sounding */
+    uint32_t generation;
+    uint8_t head, count, recovering, blocked;
+} mk1_midi_output;
+typedef struct { uint8_t attempted, accepted; } mk1_midi_pump_result;
+/* Synchronous backend: OK=whole message accepted; RETRY=definitely not sent;
+ * UNCERTAIN=delivery unknown. Other return values are treated as UNCERTAIN.
+ * Message pointer is borrowed during callback. No reentry or async ACK. */
+typedef int (*mk1_midi_send_fn)(void *context, const uint8_t message[3]);
+MK1_API int mk1_midi_output_init(mk1_midi_output *state);
+/* Uses a separate output generation, not the input stream generation.
+ * Only NOTE_ON/OFF supported. Normal submit is atomic. INVALID leaves state
+ * unchanged; FULL/RESET drop unsent work, retain possible-note cleanup and
+ * invalidate the producer token. Reset flags accept only note-off batches.
+ * Caller must reset/rearm the input producer on FULL/RESET/UNCERTAIN. */
+MK1_API int mk1_midi_output_submit(mk1_midi_output *state, uint32_t generation,
+                                   const mk1_stream_events *events);
+/* Explicit cleanup/new producer epoch. Must target the same owned endpoint:
+ * clearing notes on a different destination cannot silence the old one. */
+MK1_API int mk1_midi_output_recover(mk1_midi_output *state);
+/* Caller confirms backend repaired before retrying uncertain cleanup. */
+MK1_API int mk1_midi_output_resume(mk1_midi_output *state);
+/* budget 1..64; callback acceptance is not a synthesizer acknowledgement.
+ * Unknown delivery blocks output until resume/recover; new note-ons remain
+ * prohibited until all possible notes have accepted note-offs. */
+MK1_API int mk1_midi_output_pump(mk1_midi_output *state, mk1_midi_send_fn send,
+                                 void *context, size_t budget, mk1_midi_pump_result *result);
+
 #ifdef __cplusplus
 }
 #endif
