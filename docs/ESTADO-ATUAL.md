@@ -33,11 +33,19 @@ Replay local de 40.969 relatórios da captura dos quatro cantos: 24 NOTE_ON e 24
 
 O adaptador C `mk1_stream.c` agora liga HID20 ao detector dos 16 canais, com geração de sessão, sequência atribuída no host, ordenação temporal, gaps e watchdog chamado pelo laço chamador. Onze testes incluem 4.000 operações aleatórias com falhas e verificação de balanço de notas. O caminho nativo completo repetiu 24 pares nos dados dos quatro cantos, sem notas pendentes antes de desconectar. Continua offline: não há loop USB/MIDI de produção nem garantia de entrega a um sintetizador. Resumo em `PAD-STREAM-VALIDACAO.json`.
 
-A fila em `mk1_midi.c` codifica NOTE_ON/OFF, limita 64 mensagens, acompanha possíveis notas e bloqueia novos ataques após entrega incerta. Um callback síncrono simulado modela aceitação, certeza de não envio e resultado incerto; não é backend WinMM/ALSA nem confirmação do sintetizador. Onze testes incluem 2.000 operações com falhas e um watchdog que cancela 15 ataques ainda não enviados depois de aceitar somente um. O replay completo gerou 24 mensagens NOTE_ON e 24 NOTE_OFF no receptor em memória, sem porta real. Resumo em `MIDI-OUTPUT-VALIDACAO.json`. Backend do sistema e coordenação de entrega continuam pendentes.
+A fila em `mk1_midi.c` codifica NOTE_ON/OFF, limita 64 mensagens, acompanha possíveis notas e bloqueia novos ataques após entrega incerta. Um callback síncrono modela aceitação, certeza de não envio e resultado incerto, sem confirmação do sintetizador. Onze testes incluem 2.000 operações com falhas e um watchdog que cancela 15 ataques ainda não enviados depois de aceitar somente um. O replay completo gerou 24 mensagens NOTE_ON e 24 NOTE_OFF no receptor em memória, sem porta real. Resumo em `MIDI-OUTPUT-VALIDACAO.json`.
+
+## Backend Windows e coordenação
+
+`host/mk1_host` acrescenta backend WinMM com nome explícito, conferência do endpoint aberto, falha conservadora como entrega incerta e coordenador serializado. Sete testes de API falsa e dez do coordenador passaram localmente. A ligação ctypes verifica versão/tamanhos da ABI antes de usar os estados. O replay pelo coordenador recebeu 40.969 relatórios e produziu 24 pares em memória, parando sem fila ou notas pendentes.
+
+loopMIDI 1.0.16.27 instalado por solicitação do usuário, sem reinício; porta `MIKRO MOD FL` criada pelo usuário e confirmada na enumeração WinMM. Abertura/conferência/fechamento real passaram sem chamadas de envio de notas. O usuário confirmou a entrada habilitada no FL como generic controller. Não houve ensaio musical ao vivo. Resumo em `HOST-VALIDACAO.json`.
+
+O coordenador continua síncrono: `midiOutShortMsg` pode bloquear, e seu deadline de RETRY não interrompe um driver dentro da chamada. Leitor HID, supervisão de I/O bloqueante e laço de produção ainda faltam; não afirmar garantia de latência ou recuperação física por esses testes.
 
 ## Lacunas e entregas inexistentes
 
-Sem backup integral da flash, bootloader específico recuperado, OTP lida, ferramenta de recuperação comprovada, toolchain de alvo validado ou firmware própria compilada para XMOS. Sem esquema completo, identificação inequívoca do ADC/controlador LCD ou mapeamento físico de tiles/pinos. O núcleo C e o detector inicial existem no host; pressão contínua, integração MIDI e calibração musical completa dos pads continuam pendentes.
+Sem backup integral da flash, bootloader específico recuperado, OTP lida, ferramenta de recuperação comprovada, toolchain de alvo validado ou firmware própria compilada para XMOS. Sem esquema completo, identificação inequívoca do ADC/controlador LCD ou mapeamento físico de tiles/pinos. O núcleo C, detector e backend inicial existem no host; pressão contínua, integração MIDI ao vivo e calibração musical completa dos pads continuam pendentes.
 
 Não há dados padronizados dos 16 pads para curva global de velocity. Os dados pós-limpeza não quantificam melhora sem um ensaio anterior equivalente. O monitor HID da página e o script MIDI do FL são caminhos diferentes; a ponte não substitui o serviço NI como fonte MIDI.
 

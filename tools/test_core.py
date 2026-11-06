@@ -33,3 +33,5 @@ subprocess.run([sys.executable, str(ROOT/'core/tests/compare_models.py'), '--lib
 subprocess.run([sys.executable, str(ROOT/'core/tests/test_pad_detector.py'), '--library', str(library)], check=True)
 subprocess.run([sys.executable, str(ROOT/'core/tests/test_pad_stream.py'), '--library', str(library)], check=True)
 subprocess.run([sys.executable, str(ROOT/'core/tests/test_midi_output.py'), '--library', str(library)], check=True)
+subprocess.run([sys.executable, str(ROOT/'host/tests/test_winmm.py')], check=True)
+subprocess.run([sys.executable, str(ROOT/'host/tests/test_coordinator.py'), '--library', str(library)], check=True)

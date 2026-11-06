@@ -14,8 +14,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 972,
-      "sha256": "8457d28d712cffb77fae34834b15411f38461ebc8e2ac098e9187f8546580760"
+      "bytes": 998,
+      "sha256": "a9b99519ef773d770e154de3f1be1ff46427d00f534acd06792a6b98ce39ce27"
     },
     {
       "path": "16-PADS.md",
@@ -29,8 +29,8 @@
     },
     {
       "path": "CMakeLists.txt",
-      "bytes": 1934,
-      "sha256": "632c1f9139e934e0dee347f94c7a391f6e46979466a004e41d43e86271d57ae7"
+      "bytes": 2225,
+      "sha256": "703a98a8846c2cf7f3ec5813e0ae6bdb620907487ad2bbba26fd4c6ae4e84b96"
     },
     {
       "path": "CONEXAO-USB.md",
@@ -49,18 +49,18 @@
     },
     {
       "path": "PLANO.md",
-      "bytes": 5898,
-      "sha256": "48e80ae28dd0df6505e2023aa3574eb339ba5e4b7b2eaca35eef1b6e92e52509"
+      "bytes": 6083,
+      "sha256": "04c5dfd3909fedc81bd55735d2c84ac3cc274cf3e72c7848fa33add3087397c7"
     },
     {
       "path": "PROMPT-CONTINUIDADE.md",
-      "bytes": 4088,
-      "sha256": "95760f8c53f700568d89758f633ba47fb1d71d8210df5d765b7edf5fee0acd9d"
+      "bytes": 4459,
+      "sha256": "00f026bc741f3594a9cbde61ba682ef1ed9d3d3aa1cd95ec1160b920118ce779"
     },
     {
       "path": "README.md",
-      "bytes": 4327,
-      "sha256": "d538b77e08de3269fe262c3331cc402cd87d9741e082d2166f0bf5c36440e02a"
+      "bytes": 4471,
+      "sha256": "4d118ef8a1a8f1f70c7f01c64a01a3ae620de12abb4f705342b5063576d43af2"
     },
     {
       "path": "build_editor.py",
@@ -124,8 +124,8 @@
     },
     {
       "path": "core/MIDI-OUTPUT.md",
-      "bytes": 5780,
-      "sha256": "75170179250d0f22bf5f6ce567c16e2c5a7251a6b03b653c00979ceab9f8fe3c"
+      "bytes": 5864,
+      "sha256": "abf19b81a11166da9e6da433ec7a9998d1bdd2038a79252511d945c2a82a7ae9"
     },
     {
       "path": "core/PAD-DETECTOR.md",
@@ -134,23 +134,23 @@
     },
     {
       "path": "core/PAD-STREAM.md",
-      "bytes": 4923,
-      "sha256": "1afb02092778aafbafe9c6c9d9691a76e16ba6570c5e305f46874829fa78197d"
+      "bytes": 4993,
+      "sha256": "5768ef5522664f06fd5bbbe1590ecb86826069a8ee2282691e4c25716ccfa98b"
     },
     {
       "path": "core/README.md",
-      "bytes": 4616,
-      "sha256": "ec93961566527c677d4d442da64c1f522d396f04467b3d1e38db59288034d63b"
+      "bytes": 4742,
+      "sha256": "ad2c95df35d057ed879e02674d593df54e187f87d4e2ba40752d385b903b4463"
     },
     {
       "path": "core/include/mk1_core.h",
-      "bytes": 9984,
-      "sha256": "47307abafffcad1c93b65aa2aeca9d1b3d182f354f7a30fb70305cf2634df787"
+      "bytes": 10254,
+      "sha256": "e9ea3da1b6b422f7a737cd9cda1c6ebd9270031fa192f46ebd547ee950073e2e"
     },
     {
       "path": "core/src/mk1_core.c",
-      "bytes": 5246,
-      "sha256": "8f71cdff1328b17008511e159f1ad736055478a374cbe1f3c1a0f666308d9fa0"
+      "bytes": 5670,
+      "sha256": "eb33b2325cb4e1255ad6e854ef63052581f5b5506d13d32829c0bd749d2532f2"
     },
     {
       "path": "core/src/mk1_midi.c",
@@ -214,8 +214,13 @@
     },
     {
       "path": "docs/ESTADO-ATUAL.md",
-      "bytes": 5743,
-      "sha256": "334172298ac838cbc15f4305ad4cf2cba3e8b6d405cab709b62a67d2d7bb07f1"
+      "bytes": 6789,
+      "sha256": "11058bbc7f7d81a1289c81782a42489d845957c80e890ed864d3cd5d94f1068c"
+    },
+    {
+      "path": "docs/HOST-VALIDACAO.json",
+      "bytes": 1637,
+      "sha256": "eed7bb099b419c6f30d27a7f82ce20fab31231c321301faa6f02f2fa5efed078"
     },
     {
       "path": "docs/MATERIAIS-E-FONTES.md",
@@ -403,6 +408,46 @@
       "sha256": "2cc1c750bc53d8b370eec476513148dd1d8f6c3b95eb9442c8c615123396b07c"
     },
     {
+      "path": "host/README.md",
+      "bytes": 5602,
+      "sha256": "991d73550c978c2ce050af8fa8561feb2a70ad0ddb7805a526586cf042fa233c"
+    },
+    {
+      "path": "host/mk1_host/__init__.py",
+      "bytes": 83,
+      "sha256": "9eb4a1f9162c295cb623e3c94ece8d551a9202a6c8747a523d94695a2572533a"
+    },
+    {
+      "path": "host/mk1_host/coordinator.py",
+      "bytes": 8200,
+      "sha256": "8bcda6bd4f052f33219bae193092487af20150b1be387d1180d6f48c43c941ae"
+    },
+    {
+      "path": "host/mk1_host/memory.py",
+      "bytes": 603,
+      "sha256": "e00682d49dcd58e93689bff2fd706e35a706c3c6a43eafd19c457c5b1c209066"
+    },
+    {
+      "path": "host/mk1_host/native.py",
+      "bytes": 4488,
+      "sha256": "1ca2a72bdcc7f76df357aad6b2f5f9d0bef0f135eb49ccffb7268c2bb279fea3"
+    },
+    {
+      "path": "host/mk1_host/winmm.py",
+      "bytes": 5191,
+      "sha256": "c15899337d3ab55638b3af362b50682a8e12ff15d1f02461c82492fe1af904b7"
+    },
+    {
+      "path": "host/tests/test_coordinator.py",
+      "bytes": 6821,
+      "sha256": "8c04995c6a1b3c41abdd55797dbb90311bcb598cd742fd5867b2d8340d6e49f2"
+    },
+    {
+      "path": "host/tests/test_winmm.py",
+      "bytes": 4113,
+      "sha256": "26fe0737fc66b907dbcc2809e3db5e83e4d6231398fc32fb082b664cc0c1a4ec"
+    },
+    {
       "path": "integrar_presets.py",
       "bytes": 2506,
       "sha256": "634cfeb609f78a0d6c0caf7509ee05d7024f3b0711a4ed1260dcca87ae4013c2"
@@ -473,9 +518,19 @@
       "sha256": "8c2a58f57ce93f22b1d8d85d2afb2b49e41d5817a8b793cb73e0157cd0b7a167"
     },
     {
+      "path": "tools/midi_ports.py",
+      "bytes": 889,
+      "sha256": "d886fc17fd8c524c9a62bb9a3925351e79b6458653bec4a61594fca4a8a77cd1"
+    },
+    {
       "path": "tools/prepare_publication.py",
-      "bytes": 4533,
-      "sha256": "6dcd1a5550547522a2aade1e94628578760a2bbdad718b92708448b9c2660194"
+      "bytes": 4889,
+      "sha256": "4f8324fea5260e1057e1d330e7ed65a578f851bf2181e312f2c88fad0cb3ec9b"
+    },
+    {
+      "path": "tools/replay_host.py",
+      "bytes": 2646,
+      "sha256": "481f75d69517eab70bdaa92afa345d15777c4d65ac799138865ac04441b33213"
     },
     {
       "path": "tools/replay_pad_detector.py",
@@ -489,8 +544,8 @@
     },
     {
       "path": "tools/test_core.py",
-      "bytes": 2128,
-      "sha256": "19dcbf3a519aba97edb2d43ac696f39161a624897091b82064707303a5c91322"
+      "bytes": 2327,
+      "sha256": "8420a962057d41870b97539101bbfd3f82437fa6b8d4467316d076c934b858e6"
     }
   ],
   "manifest_self_excluded_from_hashes": true

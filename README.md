@@ -11,6 +11,7 @@ Pesquisa independente, editor de controles e preparação de uma implementação
 - [Estado atual, evidências e lacunas](docs/ESTADO-ATUAL.md)
 - [Arquitetura pretendida](docs/ARQUITETURA-PROPOSTA.md)
 - [Núcleo C: contratos, build e testes](core/README.md)
+- [Backend Windows e coordenador host](host/README.md)
 - [Materiais locais e fontes](docs/MATERIAIS-E-FONTES.md)
 - [Regras para alterações neste repositório](AGENTS.md)
 
@@ -51,6 +52,7 @@ Teste opcional de interface: instale dependências com `npm install`, instale Ed
 | `fl-integration/` | Script de integração com as APIs do FL Studio |
 | `firmware-research/` | Modelos, verificadores, análises e documentação da reconstrução |
 | `core/` | Núcleo C99 sem acesso a hardware; encoder, PWM, amostras e contratos |
+| `host/` | Backend WinMM e coordenador; abertura explícita e testes sem portas reais |
 | `tests/fixtures/` | Amostras mínimas de entrada para testes sem hardware |
 
 Não há gravação automática de firmware, execução de capturas físicas na CI nem cópia de firmware proprietária neste pacote. A seleção pública está registrada em `publication-manifest.json`. Documentos de pesquisa registram etapas históricas; para decisões atuais, prevalecem `PLANO.md` e `docs/ESTADO-ATUAL.md`.

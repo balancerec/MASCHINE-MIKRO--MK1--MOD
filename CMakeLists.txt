@@ -36,4 +36,9 @@ if(BUILD_TESTING)
   add_test(NAME midi_output_faults COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/core/tests/test_midi_output.py
     --library $<TARGET_FILE:mk1_core_shared>)
+  add_test(NAME winmm_fake_api COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/host/tests/test_winmm.py)
+  add_test(NAME host_coordinator COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/host/tests/test_coordinator.py
+    --library $<TARGET_FILE:mk1_core_shared>)
 endif()

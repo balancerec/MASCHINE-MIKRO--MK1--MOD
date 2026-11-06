@@ -36,11 +36,15 @@ não calibra limiares, latência ou curva dos 16 pads. O adaptador C de fluxo j�
 existe: leia core/PAD-STREAM.md; ordem, gaps, geração, watchdog e reconexão são
 testados offline. A fila/codificação MIDI também existe: leia core/MIDI-OUTPUT.md.
 Ela usa callback síncrono ainda simulado, com RETRY e entrega incerta; não há
-ACK do sintetizador nem backend de porta real. A próxima entrega é o backend
-do sistema e o coordenador de entrada/saída, com destino explicitamente escolhido,
-timeouts e teste ao vivo combinado com o operador. Não abrir um destino MIDI
-arbitrário nem confundir o retorno da API com confirmação física da nota.
-Pressão contínua segue pendente.
+ACK do sintetizador. O backend WinMM e coordenador síncrono agora existem em
+host/: leia host/README.md. loopMIDI foi instalado, o usuário criou MIKRO MOD FL
+e confirmou sua entrada habilitada no FL. A porta passou em abertura/fechamento
+real sem mensagens de nota. Ainda não houve teste musical ao vivo.
+A próxima entrega é o leitor HID/laço supervisionado, considerando que WinMM
+pode bloquear: o deadline entre chamadas não o interrompe. Preservar endpoint,
+sessões, limpeza de notas e fluxo NI/FL existente; evitar MIDI duplicado ao testar.
+O ensaio curto deve ser combinado com o operador. Não abrir destino arbitrário
+nem confundir sucesso da API com confirmação física. Pressão contínua segue pendente.
 Preserve o caminho NI/FL já funcional e não emita notas de teste para um projeto
 aberto sem alinhar o ensaio com o operador. Não aplicar ganhos inferidos de força
 manual nem afirmar que o build de host compila para XMOS ou é gravável.

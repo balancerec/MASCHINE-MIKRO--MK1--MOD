@@ -34,7 +34,7 @@ Um quadro gera no máximo 32 eventos: NOTE_ON e NOTE_OFF de um toque curto para 
 
 As funções usam cópias locais e só confirmam estado/saída ao terminar, sem heap. Isso preserva a transação em erros detectados, mas usa memória de pilha proporcional aos 16 estados, 32 amostras e lote. O orçamento de pilha/tempo precisa ser medido novamente no futuro alvo XMOS; a compilação host não o comprova.
 
-O watchdog não garante entrega se o chamador parar, não executar `poll` ou perder os lotes. A [fila de saída](MIDI-OUTPUT.md) agora trata ordenação/recuperação em memória com callback síncrono simulado; backend real e coordenação do laço continuam pendentes.
+O watchdog não garante entrega se o chamador parar, não executar `poll` ou perder os lotes. A [fila de saída](MIDI-OUTPUT.md) trata ordenação/recuperação em memória; [backend WinMM e coordenador síncrono](../host/README.md) estão separados. Leitor HID/laço de produção e supervisão de chamadas bloqueantes continuam pendentes.
 
 ## Verificações
 

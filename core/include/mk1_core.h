@@ -17,6 +17,11 @@ extern "C" {
 enum { MK1_LED_SLOTS = 64, MK1_LED_BYTES = 8, MK1_PAD_CHANNELS = 16,
        MK1_PAD_SAMPLES = 32, MK1_LCD_WIDTH = 128, MK1_LCD_PAGES = 8 };
 #define MK1_LED_TICKS_PER_LEVEL UINT32_C(18750)
+#define MK1_CORE_ABI_VERSION UINT32_C(1)
+MK1_API uint32_t mk1_core_abi_version(void);
+/* Host binding layout IDs: 1=config, 2=stream, 3=stream events,
+ * 4=MIDI output, 5=pump result. Unknown IDs return zero. */
+MK1_API size_t mk1_core_layout_size(unsigned int layout);
 
 /* Application contracts, NOT packed USB structures or a stable binary ABI.
  * Ticks have an adapter-defined timebase. Channels are 0..15; physical pad

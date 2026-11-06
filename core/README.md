@@ -12,7 +12,7 @@ Biblioteca C99 sem alocação dinâmica, USB, HTTP, chamadas Windows, temporiza�
 - [Adaptador do fluxo](PAD-STREAM.md): roteamento dos 16 canais, geração de sessão, sequência, watchdog e limpeza em falhas, ainda sem transporte MIDI.
 - [Fila de saída MIDI](MIDI-OUTPUT.md): codificação de notas, backpressure, entrega incerta e recuperação, com backend simulado; nenhuma porta MIDI real é aberta.
 
-O detector produz eventos de nota em memória e a fila os codifica em três bytes MIDI. Ainda não há pressão contínua, backend MIDI do sistema operacional, integração ao vivo do detector ou driver de display.
+O detector produz eventos de nota em memória e a fila os codifica em três bytes MIDI. O [backend WinMM e coordenador](../host/README.md) ficam em módulo separado, com testes simulados e abertura/fechamento real sem notas. Pressão contínua, leitor HID/laço de produção, ensaio musical ao vivo e driver de display continuam pendentes.
 
 ## Build padrão
 

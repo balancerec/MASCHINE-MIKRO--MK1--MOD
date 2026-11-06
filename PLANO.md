@@ -31,7 +31,8 @@ As etapas 5–7 podem receber pesquisa offline em paralelo conceitual, mas não 
 - [x] Implementar detector experimental com histerese, janela de pico, soltura e velocity linear de ensaio; validação/calibração musical completa pendente.
 - [x] Implementar adaptador C do fluxo com sessão, ordenação, gaps, watchdog e limpeza; testes de falhas e replay offline concluídos, integração ao vivo pendente.
 - [x] Implementar fila/codificação MIDI e contrato de callback com RETRY/entrega incerta, limpeza e testes simulados; não há confirmação física de entrega.
-- [ ] Implementar backend MIDI do sistema operacional e coordenador do loop, com endpoint explícito e teste ao vivo combinado com o operador.
+- [x] Implementar backend WinMM e coordenador síncrono, com endpoint explícito, testes falsos e abertura/fechamento real sem notas. Porta virtual preparada e entrada FL confirmada pelo usuário.
+- [ ] Implementar leitor HID e supervisão do laço/I/O bloqueante; depois realizar ensaio curto ao vivo combinado com o operador.
 - [ ] Capturar batidas leves e fortes dos demais pads em ensaios delimitados e registrar falhas de contagem.
 - [ ] Investigar toolchain XS1 L2 em fontes oficiais e testar um build mínimo local, sem acesso ao alvo.
 - [ ] Consolidar matriz de inicialização/clock/tile e a lista exata de incógnitas do boot.

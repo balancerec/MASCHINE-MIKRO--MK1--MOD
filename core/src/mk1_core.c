@@ -1,5 +1,18 @@
 #include "mk1_core.h"
 
+uint32_t mk1_core_abi_version(void) { return MK1_CORE_ABI_VERSION; }
+
+size_t mk1_core_layout_size(unsigned int layout) {
+    switch (layout) {
+        case 1: return sizeof(mk1_pad_config);
+        case 2: return sizeof(mk1_pad_stream);
+        case 3: return sizeof(mk1_stream_events);
+        case 4: return sizeof(mk1_midi_output);
+        case 5: return sizeof(mk1_midi_pump_result);
+        default: return 0;
+    }
+}
+
 int mk1_encoder_init(mk1_encoder *state) {
     if (!state) return 0;
     state->previous = 3; state->gate = 0; state->position = 0;

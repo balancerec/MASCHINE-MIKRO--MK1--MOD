@@ -43,7 +43,7 @@ Nenhuma geração deve ser lida automaticamente de novo para aceitar callbacks a
 
 `INVALID` preserva estado e indica lote/referência rejeitados. Um callback reconhecidamente antigo é descartado. Uma entrada atual inválida é erro do produtor: parar sua emissão e iniciar recuperação explícita, em vez de ignorar uma possível soltura perdida.
 
-Não há thread, ACK assíncrono, fila persistente, escolha de porta nem sincronização interna. O chamador serializa as operações. `pump` limita número de callbacks, não a duração de uma chamada que bloquear. Transporte real, coordenação do loop e testes ao vivo são a etapa seguinte.
+Não há thread, ACK assíncrono, fila persistente, escolha de porta nem sincronização interna nessa camada C. O chamador serializa as operações. `pump` limita número de callbacks, não a duração de uma chamada que bloquear. [Backend WinMM e coordenador síncrono](../host/README.md) existem em camada separada; leitor HID, supervisão e teste ao vivo continuam pendentes.
 
 ## Validação
 
