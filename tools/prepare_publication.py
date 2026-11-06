@@ -31,6 +31,9 @@ def paths():
     result += ['CMakeLists.txt', 'core/README.md', 'core/include/mk1_core.h',
                'core/src/mk1_core.c', 'core/tests/test_core.c', 'core/tests/compare_models.py',
                'tools/test_core.py', 'tools/fetch_host_compiler.py']
+    result += ['core/src/mk1_pad.c', 'core/tests/test_pad.c', 'core/tests/pad_native.py',
+               'core/tests/test_pad_detector.py', 'core/PAD-DETECTOR.md',
+               'tools/replay_pad_detector.py', 'docs/PAD-DETECTOR-VALIDACAO.json']
     return sorted(set(result))
 
 def main():

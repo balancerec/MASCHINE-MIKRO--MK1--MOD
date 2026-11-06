@@ -8,8 +8,9 @@ Biblioteca C99 sem alocação dinâmica, USB, HTTP, chamadas Windows, temporiza�
 - Encoder HID01: posição de quatro bits, clique, referência inicial e salto ambíguo de oito passos.
 - PWM de 64 posições: saturação individual, máscara de cinco bits em bloco, retenção da máscara durante o ciclo, próxima fase, overflow de ticks e ordem serial dos oito bytes.
 - HID20: 32 amostras de 12 bits com tags de canal e duas varreduras; validação de canais únicos em cada varredura.
+- [Detector experimental dos pads](PAD-DETECTOR.md): ataque, janela de pico, velocity linear, histerese, soltura e limpeza explícita de notas.
 
-O cabeçalho também declara contratos de evento de controle/musical e atualização do LCD. Ainda não há processador musical, serializador MIDI ou driver de display.
+O detector produz eventos de nota em memória. Ainda não há pressão contínua, serializador MIDI, integração ao vivo do detector ou driver de display.
 
 ## Build padrão
 

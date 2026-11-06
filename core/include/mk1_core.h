@@ -33,8 +33,8 @@ typedef enum {
     MK1_EVENT_BUTTON, MK1_EVENT_ENCODER
 } mk1_event_kind;
 
-/* Reserved contract for a future musical processor. No MIDI emission exists
- * here. MIDI channel is 1..16; data fields 0..127, encoder delta signed. */
+/* Detector NOTE_ON/OFF and reserved pressure/button/encoder contract. No MIDI
+ * emission exists here. Channel is 1..16; data 0..127, encoder delta signed. */
 typedef struct {
     uint32_t tick;
     mk1_event_kind kind;
@@ -99,6 +99,38 @@ MK1_API int mk1_led_tick(mk1_led_pwm *state, mk1_led_update *update);
  * reports leave the output untouched. Output must not overlap input. */
 MK1_API int mk1_pad_report_read(const uint8_t *report, size_t length, uint32_t tick,
                                mk1_pad_sample samples[MK1_PAD_SAMPLES]);
+
+/* Experimental host detector, not a translation of the NI musical processor.
+ * All time values use one caller-defined tick domain; durations < 2^31.
+ * Configuration is explicit: no measured-device defaults are embedded. */
+typedef struct {
+    uint32_t peak_ticks, release_ticks, retrigger_ticks;
+    uint16_t attack, release, full_scale;
+    uint8_t control, midi_channel, note;
+} mk1_pad_config;
+
+typedef enum { MK1_PAD_IDLE, MK1_PAD_PEAK, MK1_PAD_HELD } mk1_pad_phase;
+typedef struct {
+    mk1_pad_config config;
+    uint32_t last_tick, attack_tick, below_tick, off_tick;
+    uint16_t peak;
+    uint8_t phase, armed, below, has_tick, has_off;
+} mk1_pad_detector;
+
+/* At most NOTE_ON + NOTE_OFF when a short hit ends inside the peak window. */
+typedef struct { mk1_control_event events[2]; uint8_t count; } mk1_pad_events;
+
+MK1_API int mk1_pad_detector_init(mk1_pad_detector *state, const mk1_pad_config *config);
+/* Requires a quiet sample <= release to arm after init/flush or a prior hit.
+ * Input times must be nondecreasing modulo 2^32 with gaps < 2^31 ticks.
+ * Invalid input returns 0 without mutation. Caller routes each channel to
+ * its own state; adc is raw 0..4095. No MIDI is sent by this function. */
+MK1_API int mk1_pad_detector_sample(mk1_pad_detector *state, uint16_t adc,
+                                    uint32_t tick, mk1_pad_events *events);
+/* Explicit disconnect/stream-loss cleanup: release an emitted note, discard
+ * pending attack, and require quiet baseline again. No clock runs internally. */
+MK1_API int mk1_pad_detector_flush(mk1_pad_detector *state, uint32_t tick,
+                                   mk1_pad_events *events);
 
 #ifdef __cplusplus
 }

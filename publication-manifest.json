@@ -14,8 +14,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 873,
-      "sha256": "30e6e3bd4bb88fda50d60f048e569008a5989765d74094a41c652fc5b38647fa"
+      "bytes": 907,
+      "sha256": "7283858b4076a2a02225031d3043fb98fb647944ad507c03e5f8b4a06e20da7b"
     },
     {
       "path": "16-PADS.md",
@@ -29,8 +29,8 @@
     },
     {
       "path": "CMakeLists.txt",
-      "bytes": 1119,
-      "sha256": "badf0ddec6785accf722bb1559395adc14877999dee7d2173b5c778daa2e1dff"
+      "bytes": 1504,
+      "sha256": "64424a881bfb124df1d0d374287a1e44518f0d07e5c41b3fa0eb83bed7794a6b"
     },
     {
       "path": "CONEXAO-USB.md",
@@ -49,18 +49,18 @@
     },
     {
       "path": "PLANO.md",
-      "bytes": 5287,
-      "sha256": "8c64f0a328566c4cb3ee791716101020dcba8413df204c4dd3331fa7d17c1c79"
+      "bytes": 5423,
+      "sha256": "4490a5a782bb4663c5c6f48edba76b759056fc763da99baf8e74f3bad30f6051"
     },
     {
       "path": "PROMPT-CONTINUIDADE.md",
-      "bytes": 3363,
-      "sha256": "306a16304ebff9dc1d8e63caedb9f92d2f257c8c1d837bdddd0ce236c3581834"
+      "bytes": 3647,
+      "sha256": "596ea2d60909e3a7f4c3d55c4bdaea7f4d85e598b2f59e0c91a50577df8395ff"
     },
     {
       "path": "README.md",
-      "bytes": 4256,
-      "sha256": "65d98451824400106f83d140310e6fc956ba76d9d3c468f317d271a4f5d6bfbd"
+      "bytes": 4327,
+      "sha256": "d538b77e08de3269fe262c3331cc402cd87d9741e082d2166f0bf5c36440e02a"
     },
     {
       "path": "build_editor.py",
@@ -123,14 +123,19 @@
       "sha256": "d7c6a7586ffba993fa8a4dc7a6c9177492f93bb057872c1e7e6a332d84ea978c"
     },
     {
+      "path": "core/PAD-DETECTOR.md",
+      "bytes": 4780,
+      "sha256": "fc5f4d9c546f6553307639a3f122d2814b8f63eefd481140e43f315ca74de338"
+    },
+    {
       "path": "core/README.md",
-      "bytes": 4077,
-      "sha256": "c6189370cb97327971baf25413eb8102ee75d5f14cc6c1a63cee83caa965494d"
+      "bytes": 4208,
+      "sha256": "05723c64d90d4b5b245663b05f757d5639d742cc5269757cf7a9f25c0e547180"
     },
     {
       "path": "core/include/mk1_core.h",
-      "bytes": 3908,
-      "sha256": "dbaad70f1ee723f37be44db07905f4ee944a52bdf66ea1920b4824660ea10b5f"
+      "bytes": 5580,
+      "sha256": "c66a6a3561c0e0e23fe97d61598ae43eb998367cc988650ec94b951f23dd678c"
     },
     {
       "path": "core/src/mk1_core.c",
@@ -138,14 +143,34 @@
       "sha256": "8f71cdff1328b17008511e159f1ad736055478a374cbe1f3c1a0f666308d9fa0"
     },
     {
+      "path": "core/src/mk1_pad.c",
+      "bytes": 4435,
+      "sha256": "12220ac0b09bbba163cc07a4794ae0ec3b60321be24eabc42755f4623d117aee"
+    },
+    {
       "path": "core/tests/compare_models.py",
       "bytes": 6987,
       "sha256": "97131a3399147da25199888e1776b3b98dd75aaddc6dc9e693e4bb0e6fd447b8"
     },
     {
+      "path": "core/tests/pad_native.py",
+      "bytes": 1834,
+      "sha256": "0fb864ee0838b59c17395e55128e80f8be8cc924bd0ccd1678219b7e06197e2a"
+    },
+    {
       "path": "core/tests/test_core.c",
       "bytes": 2212,
       "sha256": "1f15c9afbefc366d400107a058123fbe29f37d6bf7315b30a8c975f2d7167bd0"
+    },
+    {
+      "path": "core/tests/test_pad.c",
+      "bytes": 3036,
+      "sha256": "0ef4e1b965d26b39a58ae33201d8927e97e424c9c7109da6aa6c2cc18ebcbe93"
+    },
+    {
+      "path": "core/tests/test_pad_detector.py",
+      "bytes": 6068,
+      "sha256": "c9e52e5b343f7dd96b617ffc90e43712364b4d4734f154e74bf36cf7ee4de9f9"
     },
     {
       "path": "docs/ARQUITETURA-PROPOSTA.md",
@@ -154,13 +179,18 @@
     },
     {
       "path": "docs/ESTADO-ATUAL.md",
-      "bytes": 3712,
-      "sha256": "0f67df5a6a3a9af61a1439ddea9e800bb32d4f00a71a11c5236d91a47ee711a8"
+      "bytes": 4554,
+      "sha256": "1d615f7b7b0e5228a6fc94dae8ff342d3d5c8226c3c4abddcb28c3d6a9888d75"
     },
     {
       "path": "docs/MATERIAIS-E-FONTES.md",
       "bytes": 2798,
       "sha256": "6c5bb0bbbcc93712a254d51987d2d581347f0168731918841032b8b8e9f5f6ba"
+    },
+    {
+      "path": "docs/PAD-DETECTOR-VALIDACAO.json",
+      "bytes": 1314,
+      "sha256": "a79069f2e7fa504ccea6642925b1b96853978f56e70aa1df1ae40815dceb1ed6"
     },
     {
       "path": "firmware-research/analyze_encoder_capture.py",
@@ -399,13 +429,18 @@
     },
     {
       "path": "tools/prepare_publication.py",
-      "bytes": 3938,
-      "sha256": "a3447ac9c36ae2637f90ae2ef9f6e3606ea0411fa304449c08fce2b903a878c8"
+      "bytes": 4185,
+      "sha256": "811313c609b9b5e82b394b3e2fae214b68282d867b33f4783647f6c686cb5e2f"
+    },
+    {
+      "path": "tools/replay_pad_detector.py",
+      "bytes": 4072,
+      "sha256": "376bfbe7bad706bc8eea5ba57cd17e11647a79ee6f6ed21bebb6e94b607e41eb"
     },
     {
       "path": "tools/test_core.py",
-      "bytes": 1484,
-      "sha256": "f112a8fe62c121cbfbd1ae77ba2ac6afd73a20010714347d9b045f6798e93e88"
+      "bytes": 1865,
+      "sha256": "311f3a9d31c7c2d94e8512e4ce0036c4e6f2294b09f6657d699581f8c9991adb"
     }
   ],
   "manifest_self_excluded_from_hashes": true

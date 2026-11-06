@@ -1,0 +1,61 @@
+{
+  "experimental_algorithm": true,
+  "timebase": "microseconds derived from capture timestamps",
+  "parameters": {
+    "attack": 120,
+    "release": 60,
+    "full_scale": 4095,
+    "peak_us": 10000,
+    "release_us": 10000,
+    "retrigger_us": 30000
+  },
+  "reports_replayed": 40969,
+  "phase_counts": {
+    "1": {
+      "note_on": {
+        "1": 6
+      },
+      "note_off": {
+        "1": 6
+      }
+    },
+    "2": {
+      "note_on": {
+        "4": 6
+      },
+      "note_off": {
+        "4": 6
+      }
+    },
+    "3": {
+      "note_on": {
+        "13": 6
+      },
+      "note_off": {
+        "13": 6
+      }
+    },
+    "4": {
+      "note_on": {
+        "16": 6
+      },
+      "note_off": {
+        "16": 6
+      }
+    }
+  },
+  "flush_note_offs": 0,
+  "active_notes_after_flush": 0,
+  "hardware_access": false,
+  "midi_sent": false,
+  "limits": [
+    "Parameters are trial values, not a validated device calibration.",
+    "Raw capture replay is not physical MIDI/latency validation.",
+    "ADC values use the maximum of the two samples of each channel per report."
+  ],
+  "capture_id": "pad-sensitivity-20261105-213841",
+  "capture_sha256": "5273de4dbfb8f44f126fe717b09f382ba0b675480659b1857a9f978df707c53b",
+  "total_note_ons": 24,
+  "total_note_offs": 24,
+  "expected_six_strikes_per_corner_matched": true
+}

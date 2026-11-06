@@ -2,7 +2,7 @@
 
 Pesquisa independente, editor de controles e preparação de uma implementação própria para a **Native Instruments MASCHINE MIKRO MK1**. Alvo normal USB `17CC:1110`; modo DFU observado `17CC:1112`. Não confundir com a MASCHINE grande ou com a MIKRO MK2/MK3.
 
-**Estado em 06/11/2026:** editor local e integração FL Studio funcionais na unidade de referência; núcleo C99 de encoder/PWM e leitura de amostras compilado no host e comparado com os modelos Python. **Ainda não existe uma firmware própria compilada e validada para gravação no XMOS.** A imagem oficial de atualização não é um backup completo da unidade.
+**Estado em 06/11/2026:** editor local e integração FL Studio funcionais na unidade de referência; núcleo C99 de encoder/PWM e leitura de amostras compilado no host e comparado com os modelos Python. Detector próprio experimental de ataque/pico/soltura testado offline. **Ainda não existe uma firmware própria compilada e validada para gravação no XMOS.** A imagem oficial de atualização não é um backup completo da unidade.
 
 ## Comece aqui
 

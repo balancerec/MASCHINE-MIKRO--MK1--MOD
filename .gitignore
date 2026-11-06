@@ -40,6 +40,7 @@ drivers/
 research-encdr/
 controller-editor-research/
 docs/*.json
+!docs/PAD-DETECTOR-VALIDACAO.json
 docs/*.jsonl
 docs/*.png
 docs/templates-ni/
