@@ -1,6 +1,6 @@
 # Backend Windows e coordenador host
 
-`mk1_host/` contém uma ligação ctypes validada por versão/tamanho da ABI, backend WinMM com destino explícito, coordenador serializado e receptor em memória. Importar o pacote não abre MIDI nem USB. Ainda não há leitor HID/laço de produção ligado ao FL em tempo real.
+`mk1_host/` contém ligação ctypes validada por versão/tamanho da ABI, backend WinMM com destino explícito, coordenador serializado, receptor em memória e [leitor/laço supervisionados](SUPERVISION.md). Importar o pacote não abre MIDI nem USB. O runner é experimental e inicia com saída só em memória; ainda falta ensaio musical ao vivo.
 
 ## Preparação realizada na unidade de referência
 
@@ -36,7 +36,7 @@ Fontes Microsoft: [midiOutOpen](https://learn.microsoft.com/en-us/windows/win32/
 
 O relógio Python é monotônico em microssegundos inteiros sem truncamento; o C recebe os 32 bits baixos. Intervalos que excedem a faixa temporal do núcleo provocam limpeza explícita. Regressão do relógio é erro do chamador. Somente `running` aceita amostras; sessões e gerações de entrada/saída são distintas.
 
-**Limite importante:** o coordenador é síncrono. A Microsoft documenta que `midiOutShortMsg` pode esperar pelo envio. O deadline de RETRY é verificado entre chamadas e não interrompe um driver bloqueado dentro de WinMM. Não há garantia de tempo real ou de recuperação se o processo/laço deixar de executar. Isolamento de I/O bloqueante/supervisão é necessário antes de considerar um laço de produção.
+**Limite importante:** a API WinMM é síncrona e pode esperar pelo envio. O backend direto não preempta essa chamada. `SupervisedMIDI` agora a isola em processo com prazo de resposta e recuperação; isso limita a espera do chamador em condições normais do SO, sem oferecer garantia de tempo real ou ACK físico. O coordenador precisa continuar sendo executado no processo principal.
 
 ## Testes e replay
 
@@ -44,4 +44,4 @@ Os testes de WinMM usam API falsa até no Windows; a CI nunca abre a porta real.
 
 `tools/replay_host.py` reproduz capturas existentes para `MemoryBackend` exclusivamente. A ferramenta não possui opção de porta real. O resultado de 40.969 relatórios foi 24 NOTE_ON e 24 NOTE_OFF, com fila/mapa vazios ao parar. Resumo em `docs/HOST-VALIDACAO.json`; parâmetros são experimentais, sem calibração aplicada.
 
-Próximos passos: leitor HID/laço supervisionado, detecção de backlog, escolha de perfil explícito e ensaio curto combinado com o operador. Antes de usar o caminho próprio, evitar entrada MIDI duplicada do serviço NI no FL. Nenhum ajuste desse caminho existente foi feito nesta etapa.
+Próximos passos: ensaio musical curto combinado com o operador e avaliação de latência/curvas. O leitor/laço agora verifica backlog e exige parâmetros explícitos. Antes de usar saída real, evitar entrada MIDI duplicada do serviço NI no FL; o runner não modifica automaticamente a configuração do FL ou o serviço NI.

@@ -44,6 +44,7 @@ docs/*.json
 !docs/PAD-STREAM-VALIDACAO.json
 !docs/MIDI-OUTPUT-VALIDACAO.json
 !docs/HOST-VALIDACAO.json
+!docs/SUPERVISION-VALIDACAO.json
 docs/*.jsonl
 docs/*.png
 docs/templates-ni/

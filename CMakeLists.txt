@@ -41,4 +41,8 @@ if(BUILD_TESTING)
   add_test(NAME host_coordinator COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/host/tests/test_coordinator.py
     --library $<TARGET_FILE:mk1_core_shared>)
+  add_test(NAME supervised_fake_devices COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/host/tests/test_supervised.py)
+  add_test(NAME runtime_fake_loop COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/host/tests/test_runtime.py)
 endif()

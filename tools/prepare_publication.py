@@ -42,6 +42,11 @@ def paths():
                'host/mk1_host/winmm.py', 'host/mk1_host/coordinator.py', 'host/mk1_host/memory.py',
                'host/tests/test_winmm.py', 'host/tests/test_coordinator.py',
                'tools/midi_ports.py', 'tools/replay_host.py', 'docs/HOST-VALIDACAO.json']
+    result += ['host/mk1_host/supervised.py', 'host/mk1_host/hid_reader.py',
+               'host/mk1_host/midi_worker.py', 'host/mk1_host/runtime.py',
+               'host/tests/test_supervised.py', 'host/tests/test_runtime.py',
+               'host/SUPERVISION.md', 'tools/run_host.py', 'tools/check_midi_worker.py',
+               'docs/SUPERVISION-VALIDACAO.json']
     return sorted(set(result))
 
 def main():

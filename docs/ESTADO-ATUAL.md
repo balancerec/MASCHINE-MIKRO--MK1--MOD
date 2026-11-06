@@ -41,7 +41,7 @@ A fila em `mk1_midi.c` codifica NOTE_ON/OFF, limita 64 mensagens, acompanha poss
 
 loopMIDI 1.0.16.27 instalado por solicitação do usuário, sem reinício; porta `MIKRO MOD FL` criada pelo usuário e confirmada na enumeração WinMM. Abertura/conferência/fechamento real passaram sem chamadas de envio de notas. O usuário confirmou a entrada habilitada no FL como generic controller. Não houve ensaio musical ao vivo. Resumo em `HOST-VALIDACAO.json`.
 
-O coordenador continua síncrono: `midiOutShortMsg` pode bloquear, e seu deadline de RETRY não interrompe um driver dentro da chamada. Leitor HID, supervisão de I/O bloqueante e laço de produção ainda faltam; não afirmar garantia de latência ou recuperação física por esses testes.
+O backend WinMM direto é síncrono; agora há `SupervisedMIDI` em processo separado, sem reutilização de IPC após término forçado. O leitor HID também foi isolado, com buffer de capacidade limitada, verificação de idade e parada em falhas. O runner experimental é limitado a 60 segundos e usa memória por padrão; modo live exige destino e confirmação de isolamento da entrada NI. Quinze testes novos passaram (nove de processos com dispositivos falsos e seis do laço). Leitura real de seis segundos recebeu 4.499 relatórios, com idade máxima de fila observada 20.246 µs e parada limpa; nenhuma porta MIDI foi aberta nesse ensaio. Outro teste abriu/fechou a porta virtual no processo MIDI sem notas. Resumo em `SUPERVISION-VALIDACAO.json`. Não há ensaio musical real ou garantia de latência/ACK físico.
 
 ## Lacunas e entregas inexistentes
 

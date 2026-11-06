@@ -40,11 +40,13 @@ ACK do sintetizador. O backend WinMM e coordenador síncrono agora existem em
 host/: leia host/README.md. loopMIDI foi instalado, o usuário criou MIKRO MOD FL
 e confirmou sua entrada habilitada no FL. A porta passou em abertura/fechamento
 real sem mensagens de nota. Ainda não houve teste musical ao vivo.
-A próxima entrega é o leitor HID/laço supervisionado, considerando que WinMM
-pode bloquear: o deadline entre chamadas não o interrompe. Preservar endpoint,
-sessões, limpeza de notas e fluxo NI/FL existente; evitar MIDI duplicado ao testar.
-O ensaio curto deve ser combinado com o operador. Não abrir destino arbitrário
-nem confundir sucesso da API com confirmação física. Pressão contínua segue pendente.
+O leitor HID e a supervisão agora existem: leia host/SUPERVISION.md. O runner
+tools/run_host.py usa memória por padrão, processos separados e limites de buffer,
+idade e duração. A leitura real sem saída passou; o modo live ainda não foi
+ensaiado musicalmente. A próxima entrega é um teste curto combinado com o operador:
+evitar entrada NI duplicada no FL, selecionar instrumento e confirmar contagem.
+Preservar endpoint, sessões e limpeza; não abrir destino arbitrário ou tratar
+sucesso da API como ACK físico. Pressão contínua e calibração completa seguem pendentes.
 Preserve o caminho NI/FL já funcional e não emita notas de teste para um projeto
 aberto sem alinhar o ensaio com o operador. Não aplicar ganhos inferidos de força
 manual nem afirmar que o build de host compila para XMOS ou é gravável.
