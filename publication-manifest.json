@@ -1,0 +1,371 @@
+{
+  "scope": "Own source, authored research reports and reduced physical fixture; no NI firmware or installers",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 120,
+      "sha256": "a163751dd0b9da8ea0589164a61dfc3e94bd43ff6e854138853bbc5e51273ae7"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 495,
+      "sha256": "6250da65802ba42693f33c8733965dfa84636a24f0ef036662efd42ea734cb27"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 866,
+      "sha256": "f28480bfc9d63d8980b4ce448879e6ca2833bac16f86a49fd327e2348382fa05"
+    },
+    {
+      "path": "16-PADS.md",
+      "bytes": 5722,
+      "sha256": "22b4a453d4d8fc57ded709ee171cec569f59e081b0ce1bc0e9a39b35bed41e44"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1306,
+      "sha256": "6f9190f3220c6e71cffae8f6265723fd1350e3a54215cae9945099f13ef65bd3"
+    },
+    {
+      "path": "CONEXAO-USB.md",
+      "bytes": 4184,
+      "sha256": "ae55aefe43c8685d9721f52ad5e423da0d7850d5fea4c653a15fb3c06ec33f79"
+    },
+    {
+      "path": "FL-STUDIO.md",
+      "bytes": 4747,
+      "sha256": "8a9af0d51453115fdd9dcc6f7c36850c1044b6af65bc1581f00327ea0782ad8b"
+    },
+    {
+      "path": "Iniciar-MIKRO.ps1",
+      "bytes": 620,
+      "sha256": "9043e4a8b0f4210a1d2c50aaaaee69fd9279737d2d16c605956033db7d955fcf"
+    },
+    {
+      "path": "PLANO.md",
+      "bytes": 5055,
+      "sha256": "5195aa0e0e0c14184c71b078908760623586e0f39915aea690288c1d65f84b18"
+    },
+    {
+      "path": "PROMPT-CONTINUIDADE.md",
+      "bytes": 3152,
+      "sha256": "3c464f0025779f5321166f7ffa71cbb912f0dee8cc46739a4fc54d30ce5ae434"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4070,
+      "sha256": "214b46a2347efad0134c4a0f9762a038e70b22fb7f5a4b9fa469a9fff4f533ca"
+    },
+    {
+      "path": "build_editor.py",
+      "bytes": 1107,
+      "sha256": "0e30456b7e6058f078b14cb8435b472ad9af8ea7d216d3cf3118e4181628b935"
+    },
+    {
+      "path": "control-studio/dist/calibration.js",
+      "bytes": 1868,
+      "sha256": "cc0f9b576b8831e2884714b2620ce862883249b8be410eedc8ea15e0bf04d714"
+    },
+    {
+      "path": "control-studio/dist/display.js",
+      "bytes": 2584,
+      "sha256": "d0bfee60d3cb46d0b8eb921dd4b1ae7047daba2d5e67e95627cdd1f2f42bc011"
+    },
+    {
+      "path": "control-studio/dist/fl-studio.js",
+      "bytes": 6916,
+      "sha256": "6122f943d83c71b494aa69f105b6f197270fb85597860becb8979cc98e0ad888"
+    },
+    {
+      "path": "control-studio/dist/hardware.css",
+      "bytes": 2061,
+      "sha256": "47afe3a50b70934815e79b42aa7ef47b1c225ca663f59c7aa6841895c5d43261"
+    },
+    {
+      "path": "control-studio/dist/hardware.js",
+      "bytes": 11386,
+      "sha256": "e798e1d44b293d8ef6e8e7e6cc68428fd68479d60b026ec91e9e1f2f8937415d"
+    },
+    {
+      "path": "control-studio/dist/index.html",
+      "bytes": 5509,
+      "sha256": "03039d19c4d7ef3256857337cc29e51ad147cbd43f816ff4b77c2c5528b86328"
+    },
+    {
+      "path": "control-studio/dist/physical-controls.js",
+      "bytes": 1506,
+      "sha256": "96d62d7ff930816d0127064a5b4530c25a126da679dc4f25e2478f29b48ed072"
+    },
+    {
+      "path": "control-studio/dist/presets.js",
+      "bytes": 5155,
+      "sha256": "5b7a2f3a0722424ad8e1c036c0c18df9a95b7ce88ef066183c03c24d3f5e0575"
+    },
+    {
+      "path": "control-studio/dist/style.css",
+      "bytes": 9400,
+      "sha256": "18d8625e63bdb8b91449050c0a44966262ee31d83a444f8312db356e3894262a"
+    },
+    {
+      "path": "control-studio/src/app.js",
+      "bytes": 9625,
+      "sha256": "a2843e2f7fcd5df620376ee1694a55d65beb4fd99152865e14003a037a0ed5f4"
+    },
+    {
+      "path": "control-studio/src/physical-calibration.json",
+      "bytes": 6012,
+      "sha256": "12111c5a490f618c5cf94214bb1ee4b40a48fdd5833b32fdeb7f95a824be959d"
+    },
+    {
+      "path": "docs/ARQUITETURA-PROPOSTA.md",
+      "bytes": 1287,
+      "sha256": "6e9d8454bc5b80eed5bedb617e56242aae6a3b2fe4d04077f3cf68c765fde64f"
+    },
+    {
+      "path": "docs/ESTADO-ATUAL.md",
+      "bytes": 3039,
+      "sha256": "e25a54e1edfc29cc102aaf7840d0c25fac27f22b91b7199bb00b41749b25da1d"
+    },
+    {
+      "path": "docs/MATERIAIS-E-FONTES.md",
+      "bytes": 2798,
+      "sha256": "6c5bb0bbbcc93712a254d51987d2d581347f0168731918841032b8b8e9f5f6ba"
+    },
+    {
+      "path": "firmware-research/analyze_encoder_capture.py",
+      "bytes": 4468,
+      "sha256": "b2f2d63c581f5471059b207668b75dc4a13804c4601c9d2c8a925530be42ee9a"
+    },
+    {
+      "path": "firmware-research/analyze_pad_corners.py",
+      "bytes": 3278,
+      "sha256": "fa50e29306824f0d4e89a9dbe772ef1d15ae2a559d5ab884c34ad8c5478d4d66"
+    },
+    {
+      "path": "firmware-research/analyze_pad_neighbors.py",
+      "bytes": 2271,
+      "sha256": "080bd3cdb7fa45e12fc4375afcb689ada836bc84bd48694e556466cd2ec8deb2"
+    },
+    {
+      "path": "firmware-research/analyze_pad_sensitivity.py",
+      "bytes": 3831,
+      "sha256": "b93f8cf4bc391b3d9675f70a53641df84aade19353d294e8cace3356e28575d9"
+    },
+    {
+      "path": "firmware-research/capture_encoder_hid.py",
+      "bytes": 2041,
+      "sha256": "0ef3501beda146d77fd00b324d5aee98889b024951d20805bdb985c278a5f314"
+    },
+    {
+      "path": "firmware-research/capture_pad_sensitivity.py",
+      "bytes": 3282,
+      "sha256": "754a99e9311e8bb09a8da1d6b95367618387137f457ba4e5b4fbddbcab58bfe0"
+    },
+    {
+      "path": "firmware-research/encoder_model.py",
+      "bytes": 1682,
+      "sha256": "5aaa9821b607bf3d559e16322b1d99eb50839cf4423da778cafbf5fb940427a8"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/ARQUITETURA.md",
+      "bytes": 8037,
+      "sha256": "712567dcf2c44a3d308c747116bc5c1902ba11c3dbaa4745531b3083f48ba42e"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/BOOT-CONTAINER.md",
+      "bytes": 5295,
+      "sha256": "8d8068e98de5c873fbfc8a76efd02c95c947eca67b384f1f6773526cf14031dc"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/CRC-LEGADO.md",
+      "bytes": 4534,
+      "sha256": "c26a8e6430dbfe18348e5ab932ec9c9ed2c416713c78c45e6c5ec49452533ad9"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/ENCODER-TRADUZIDO.md",
+      "bytes": 5033,
+      "sha256": "00572a457c8d519645a72e303a460bcf5ef6132cec73ffe67b61aedfa8b9354e"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/F8-DISPLAY.md",
+      "bytes": 5285,
+      "sha256": "181a75895f334bebcf095cae907fbc8918ba5f6fb9ff91bc85e44a8a0408ad75"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/FLASH-BACKEND.md",
+      "bytes": 7532,
+      "sha256": "c00cbbba7b3ad43eb3426c9f2b06a1dbf97a2756ee148d3f066e2ed6439e09cf"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/ID-FLASH-USB.md",
+      "bytes": 3254,
+      "sha256": "9677c3bf4ae35e840c2ee285785d7862ec8539db534d6fe6f0c267b629adcf13"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/LEDS-TRADUZIDOS.md",
+      "bytes": 4330,
+      "sha256": "7c51949cc0e93e4ef72d0e209a19d6538bb9a41a8df4a86853eaef64ca4b3756"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/PAD-BANKS.md",
+      "bytes": 4470,
+      "sha256": "377f77285c6e1a1c08105a6bfada95f7e5741c8e9219143c72443574355bfc6d"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/PROCESSAMENTO-PADS-NI.md",
+      "bytes": 8450,
+      "sha256": "54bd7680c682dc66f98a0e2fe0057c1ce4b3735b1932ebf7f1c5831ff49cb259"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/RECURSOS-XS1.md",
+      "bytes": 4030,
+      "sha256": "bc54d166a890258d3caaf692ab682d2699290e2cbc6a524f1130bc7a106f1ec5"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/SENSIBILIDADE-POS-LIMPEZA.md",
+      "bytes": 4581,
+      "sha256": "a0610010060a47307aa0b0e99332e0aa62d3ddb8a0cb956ad17057d5f87e4de0"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/SINAIS-E-SEQUENCIAS.md",
+      "bytes": 5558,
+      "sha256": "5f0069e1f0ef1170fdc9c19c71b5e607a1b39d72de4cb5727a0e5765a8d187a9"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/UPDATER-PATH.md",
+      "bytes": 6229,
+      "sha256": "15ff2938862d17d5132a0faa7a153b8bd816f818593dfb6197105fc45d8a92e4"
+    },
+    {
+      "path": "firmware-research/fw55-analysis/architecture/VALIDACAO-PADS-USB-MIDI.md",
+      "bytes": 8144,
+      "sha256": "e49f6d98f1faee25521eaedbe1a3c8b173c6cae19785c2967fb405a189231ce5"
+    },
+    {
+      "path": "firmware-research/inspect_boot_container.py",
+      "bytes": 4093,
+      "sha256": "c0a68618952b7683ea1399adce4a9fa99e5a7f771b9fd31e5fee3c5114137495"
+    },
+    {
+      "path": "firmware-research/led_pwm_model.py",
+      "bytes": 2609,
+      "sha256": "29e7d51dcbafe296cf9eb738b0dd4fac1452704532a910fc38c6fe48717b1cc9"
+    },
+    {
+      "path": "firmware-research/map_xs1_resources.py",
+      "bytes": 2609,
+      "sha256": "db8f56ec6ff385a84a9112965771a74c61aae11830e553f77968299e1e3115c4"
+    },
+    {
+      "path": "firmware-research/physical-board/PLACA-MK1.md",
+      "bytes": 5548,
+      "sha256": "7f30463879aa13805400b599206d423ee46d2a775603bcfe99320e85ed4aa910"
+    },
+    {
+      "path": "firmware-research/reconstruct_signal_roles.py",
+      "bytes": 5936,
+      "sha256": "4e26c062ae36a57ed745503216037f1a19605ad36d1cc0478c3f8066c167b4ab"
+    },
+    {
+      "path": "firmware-research/test_boot_container.py",
+      "bytes": 1278,
+      "sha256": "292e6ab7c8a3478b49ec844eb9bce3924a25751424c148b4b6ed576edca692a1"
+    },
+    {
+      "path": "firmware-research/trace_fw55.py",
+      "bytes": 4364,
+      "sha256": "cf33528b982a4d0628f6f3346e1bb5d6728b9b537b5982a520ff2167496a8e35"
+    },
+    {
+      "path": "firmware-research/verify_encoder.py",
+      "bytes": 4741,
+      "sha256": "66eeab47a517e4a1e344f8b092e2443ec15195d28b7f84571a03fd6232f6613c"
+    },
+    {
+      "path": "firmware-research/verify_led_pwm.py",
+      "bytes": 6220,
+      "sha256": "4dbcdc458e98911daae88216e2479e0da4e6be3e84199f0cae45170f3e56ace1"
+    },
+    {
+      "path": "firmware-research/verify_xmos_image_crc.py",
+      "bytes": 4276,
+      "sha256": "584e0dad58172ff6cb041d6f8114d24b83e49cb89bcc53e5b216cca9ed1f49ed"
+    },
+    {
+      "path": "fl-integration/device_MIKRO_16_Pads.py",
+      "bytes": 6568,
+      "sha256": "15acebd58ab91ebcaec0bb427421c25fd6c22c954147d744074c5979edb28881"
+    },
+    {
+      "path": "integrar_presets.py",
+      "bytes": 2506,
+      "sha256": "634cfeb609f78a0d6c0caf7509ee05d7024f3b0711a4ed1260dcca87ae4013c2"
+    },
+    {
+      "path": "ler_templates_ni.py",
+      "bytes": 4112,
+      "sha256": "e7b4f15cd74afdf99a83f1ba1f49ba8f5c98907f03bfc45dad028ede045edcfd"
+    },
+    {
+      "path": "mikro_bridge.py",
+      "bytes": 12939,
+      "sha256": "f689c7ceb541fa075e3a55ce13505755b75bab1e0b50f8158d4751a62dc87a67"
+    },
+    {
+      "path": "package.json",
+      "bytes": 231,
+      "sha256": "57ac7e0802d6a27c80afcc9326aef95e1ba8416dd2db45ab209481e74631c0f1"
+    },
+    {
+      "path": "requirements-research.txt",
+      "bytes": 73,
+      "sha256": "fa6b7481123761ec5eabe2f378c3d0c8d4926e1250c4741e6a78ab06bc8a0ada"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 15,
+      "sha256": "6e78c6c5a61dbebf36f570a14685c795efcdb3d8bb6b6118b6aa78dd0aca54d4"
+    },
+    {
+      "path": "test_16_pads.py",
+      "bytes": 4788,
+      "sha256": "394d85970e17b4892623b08a14045b6752fd0073742cb861a36a55e3304bc85c"
+    },
+    {
+      "path": "test_bridge.py",
+      "bytes": 1945,
+      "sha256": "c12c078ef1eae02e1ee322e09f0f2b2f5a3db64581cfa6dbfd1fcaf9c17e6dd6"
+    },
+    {
+      "path": "test_display.py",
+      "bytes": 1856,
+      "sha256": "efdf3332b4d1928229f1ef6b0b966805d61b3a5c1c776369fc11f5ee54778d0b"
+    },
+    {
+      "path": "test_encoder.cjs",
+      "bytes": 1469,
+      "sha256": "8d5adafc5acf1e925d4917dbb79aa697b91061600672f70180dfa2d1d7782afa"
+    },
+    {
+      "path": "test_encoder_browser.cjs",
+      "bytes": 1200,
+      "sha256": "91cac4f0bec8b16807b27363a3162fa12cb361b4779254cf73f7890db6e11beb"
+    },
+    {
+      "path": "tests/fixtures/encoder-ten-right.json",
+      "bytes": 1198,
+      "sha256": "d498401e69d5d6a9b67f0ad1a66a528610842b690be249f1d32fbdbdb966824b"
+    },
+    {
+      "path": "tools/check_public_editor.cjs",
+      "bytes": 904,
+      "sha256": "61eb0e332956ef0a385eaec6cafef06c449a523c69309ecbc26ff80d1b36e114"
+    },
+    {
+      "path": "tools/prepare_publication.py",
+      "bytes": 3541,
+      "sha256": "4459036a25b419d3afea2cdefefbbb69a3cb5ed8f1a6eff04083b22d73e1343f"
+    }
+  ],
+  "manifest_self_excluded_from_hashes": true
+}

@@ -1,0 +1,11 @@
+{
+  "name": "maschine-mikro-mk1-mod",
+  "private": true,
+  "scripts": {
+    "test:encoder": "node test_encoder.cjs",
+    "test:browser": "node test_encoder_browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  }
+}

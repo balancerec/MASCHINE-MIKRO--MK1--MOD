@@ -1,0 +1,351 @@
+{
+  "model": "17cc:1110",
+  "serial": "MK1-reference",
+  "version": 1,
+  "input": {
+    "report_id": 32,
+    "sample_mask": 4095,
+    "channel_shift": 12,
+    "banks": 2
+  },
+  "pads": {
+    "1": {
+      "input_channel": 12,
+      "led_addresses": [
+        23
+      ]
+    },
+    "2": {
+      "input_channel": 13,
+      "led_addresses": [
+        22
+      ]
+    },
+    "3": {
+      "input_channel": 14,
+      "led_addresses": [
+        21
+      ]
+    },
+    "4": {
+      "input_channel": 15,
+      "led_addresses": [
+        20
+      ]
+    },
+    "5": {
+      "input_channel": 8,
+      "led_addresses": [
+        27
+      ]
+    },
+    "6": {
+      "input_channel": 9,
+      "led_addresses": [
+        26
+      ]
+    },
+    "7": {
+      "input_channel": 10,
+      "led_addresses": [
+        25
+      ]
+    },
+    "8": {
+      "input_channel": 11,
+      "led_addresses": [
+        24
+      ]
+    },
+    "9": {
+      "input_channel": 4,
+      "led_addresses": [
+        34,
+        47
+      ]
+    },
+    "10": {
+      "input_channel": 5,
+      "led_addresses": [
+        35,
+        46
+      ]
+    },
+    "11": {
+      "input_channel": 6,
+      "led_addresses": [
+        31,
+        45
+      ]
+    },
+    "12": {
+      "input_channel": 7,
+      "led_addresses": [
+        29,
+        44
+      ]
+    },
+    "13": {
+      "input_channel": 0,
+      "led_addresses": [
+        33,
+        51
+      ]
+    },
+    "14": {
+      "input_channel": 1,
+      "led_addresses": [
+        32,
+        50
+      ]
+    },
+    "15": {
+      "input_channel": 2,
+      "led_addresses": [
+        30,
+        49
+      ]
+    },
+    "16": {
+      "input_channel": 3,
+      "led_addresses": [
+        28,
+        48
+      ]
+    }
+  },
+  "controls": {
+    "button0": {
+      "label": "F1",
+      "input_bit": 23,
+      "led_addresses": [
+        39
+      ]
+    },
+    "button1": {
+      "label": "F2",
+      "input_bit": 22,
+      "led_addresses": [
+        38
+      ]
+    },
+    "button2": {
+      "label": "F3",
+      "input_bit": 21,
+      "led_addresses": [
+        37
+      ]
+    },
+    "button3": {
+      "label": "MAIN",
+      "input_bit": 20,
+      "led_addresses": [
+        36
+      ]
+    },
+    "button4": {
+      "label": "NAV",
+      "input_bit": 19,
+      "led_addresses": [
+        40
+      ]
+    },
+    "button5": {
+      "label": "LEFT",
+      "input_bit": 18,
+      "led_addresses": [
+        41
+      ]
+    },
+    "button6": {
+      "label": "RIGHT",
+      "input_bit": 17,
+      "led_addresses": [
+        42
+      ]
+    },
+    "button7": {
+      "label": "ENTER",
+      "input_bit": 16,
+      "led_addresses": [
+        43
+      ]
+    },
+    "button8": {
+      "label": "BROWSE",
+      "input_bit": 15,
+      "led_addresses": [
+        3
+      ]
+    },
+    "button9": {
+      "label": "SAMPLING",
+      "input_bit": 14,
+      "led_addresses": [
+        2
+      ]
+    },
+    "button10": {
+      "label": "GROUP",
+      "input_bit": 13,
+      "led_addresses": [
+        8
+      ]
+    },
+    "button11": {
+      "label": "NOTE REPEAT",
+      "input_bit": 12,
+      "led_addresses": [
+        1
+      ]
+    },
+    "button12": {
+      "label": "RESTART",
+      "input_bit": 7,
+      "led_addresses": [
+        0
+      ]
+    },
+    "button13": {
+      "label": "REWIND",
+      "input_bit": 6,
+      "led_addresses": [
+        4
+      ]
+    },
+    "button14": {
+      "label": "FORWARD",
+      "input_bit": 5,
+      "led_addresses": [
+        5
+      ]
+    },
+    "button15": {
+      "label": "GRID",
+      "input_bit": 4,
+      "led_addresses": [
+        6
+      ]
+    },
+    "button16": {
+      "label": "PLAY",
+      "input_bit": 3,
+      "led_addresses": [
+        10
+      ]
+    },
+    "button17": {
+      "label": "REC",
+      "input_bit": 2,
+      "led_addresses": [
+        9
+      ]
+    },
+    "button18": {
+      "label": "ERASE",
+      "input_bit": 1,
+      "led_addresses": [
+        7
+      ]
+    },
+    "button19": {
+      "label": "SHIFT",
+      "input_bit": 0,
+      "led_addresses": [
+        11
+      ]
+    },
+    "button20": {
+      "label": "SCENE",
+      "input_bit": 31,
+      "led_addresses": [
+        15
+      ]
+    },
+    "button21": {
+      "label": "PATTERN",
+      "input_bit": 30,
+      "led_addresses": [
+        14
+      ]
+    },
+    "button22": {
+      "label": "PAD MODE",
+      "input_bit": 29,
+      "led_addresses": [
+        13
+      ]
+    },
+    "button23": {
+      "label": "VIEW",
+      "input_bit": 28,
+      "led_addresses": [
+        12
+      ]
+    },
+    "button24": {
+      "label": "DUPLICATE",
+      "input_bit": 27,
+      "led_addresses": [
+        16
+      ]
+    },
+    "button25": {
+      "label": "SELECT",
+      "input_bit": 26,
+      "led_addresses": [
+        17
+      ]
+    },
+    "button26": {
+      "label": "SOLO",
+      "input_bit": 25,
+      "led_addresses": [
+        18
+      ]
+    },
+    "button27": {
+      "label": "MUTE",
+      "input_bit": 24,
+      "led_addresses": [
+        19
+      ]
+    },
+    "encoder": {
+      "label": "ENCODER PUSH",
+      "input_bit": 11,
+      "led_addresses": []
+    }
+  },
+  "unidentified_led_addresses": [
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59
+  ],
+  "limits": [
+    "LED color channels not named",
+    "Velocity curves not calibrated"
+  ],
+  "encoder_rotation": {
+    "right_sign": 1,
+    "increments_per_right_detent": 1.0,
+    "hid_position": {
+      "id": 1,
+      "byte_index_including_id": 5,
+      "bit_offset": 0,
+      "bits": 4
+    },
+    "push_bit": 11,
+    "confirmed_detents": 10,
+    "observed_increments": 10,
+    "initial_position": 6,
+    "final_position": 0,
+    "left_direction_tested": false,
+    "fast_rotation_tested": false
+  }
+}
