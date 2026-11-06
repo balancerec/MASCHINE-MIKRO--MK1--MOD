@@ -32,9 +32,11 @@ O núcleo C99 já existe em core/: encoder, PWM, parser de amostras e detector
 experimental próprio de ataque/pico/soltura, com eventos NOTE_ON/OFF em memória.
 Leia core/README.md e core/PAD-DETECTOR.md e execute os testes de host antes de
 modificar. O replay local dos quatro cantos gerou 24 pares corretos, mas isso
-não calibra limiares, latência ou curva dos 16 pads. A próxima entrega é definir
-o adaptador de fluxo (ordem de amostras, gaps, reconexão e flush) antes de ligar
-esse detector a um transporte MIDI; pressão contínua é outro item pendente.
+não calibra limiares, latência ou curva dos 16 pads. O adaptador C de fluxo já
+existe: leia core/PAD-STREAM.md; ordem, gaps, geração, watchdog e reconexão são
+testados offline. A próxima entrega é o contrato e a implementação de saída
+MIDI/fila, garantindo entrega dos eventos de limpeza e falhas do transporte,
+antes de ligar tudo a USB/MIDI ao vivo; pressão contínua segue pendente.
 Preserve o caminho NI/FL já funcional e não emita notas de teste para um projeto
 aberto sem alinhar o ensaio com o operador. Não aplicar ganhos inferidos de força
 manual nem afirmar que o build de host compila para XMOS ou é gravável.

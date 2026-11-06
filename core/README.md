@@ -9,6 +9,7 @@ Biblioteca C99 sem alocação dinâmica, USB, HTTP, chamadas Windows, temporiza�
 - PWM de 64 posições: saturação individual, máscara de cinco bits em bloco, retenção da máscara durante o ciclo, próxima fase, overflow de ticks e ordem serial dos oito bytes.
 - HID20: 32 amostras de 12 bits com tags de canal e duas varreduras; validação de canais únicos em cada varredura.
 - [Detector experimental dos pads](PAD-DETECTOR.md): ataque, janela de pico, velocity linear, histerese, soltura e limpeza explícita de notas.
+- [Adaptador do fluxo](PAD-STREAM.md): roteamento dos 16 canais, geração de sessão, sequência, watchdog e limpeza em falhas, ainda sem transporte MIDI.
 
 O detector produz eventos de nota em memória. Ainda não há pressão contínua, serializador MIDI, integração ao vivo do detector ou driver de display.
 

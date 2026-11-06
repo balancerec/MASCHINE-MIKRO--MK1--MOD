@@ -3,9 +3,9 @@ project(mk1_core VERSION 0.1.0 LANGUAGES C)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
-add_library(mk1_core STATIC core/src/mk1_core.c core/src/mk1_pad.c)
+add_library(mk1_core STATIC core/src/mk1_core.c core/src/mk1_pad.c core/src/mk1_stream.c)
 target_include_directories(mk1_core PUBLIC core/include)
-add_library(mk1_core_shared SHARED core/src/mk1_core.c core/src/mk1_pad.c)
+add_library(mk1_core_shared SHARED core/src/mk1_core.c core/src/mk1_pad.c core/src/mk1_stream.c)
 target_include_directories(mk1_core_shared PUBLIC core/include)
 target_compile_definitions(mk1_core_shared PRIVATE MK1_CORE_SHARED)
 foreach(target mk1_core mk1_core_shared)
@@ -29,5 +29,8 @@ if(BUILD_TESTING)
     --library $<TARGET_FILE:mk1_core_shared>)
   add_test(NAME pad_detector_behavior COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/core/tests/test_pad_detector.py
+    --library $<TARGET_FILE:mk1_core_shared>)
+  add_test(NAME pad_stream_faults COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/core/tests/test_pad_stream.py
     --library $<TARGET_FILE:mk1_core_shared>)
 endif()

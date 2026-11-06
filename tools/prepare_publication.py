@@ -34,6 +34,8 @@ def paths():
     result += ['core/src/mk1_pad.c', 'core/tests/test_pad.c', 'core/tests/pad_native.py',
                'core/tests/test_pad_detector.py', 'core/PAD-DETECTOR.md',
                'tools/replay_pad_detector.py', 'docs/PAD-DETECTOR-VALIDACAO.json']
+    result += ['core/src/mk1_stream.c', 'core/tests/test_pad_stream.py', 'core/PAD-STREAM.md',
+               'tools/replay_pad_stream.py', 'docs/PAD-STREAM-VALIDACAO.json']
     return sorted(set(result))
 
 def main():

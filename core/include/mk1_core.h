@@ -132,6 +132,44 @@ MK1_API int mk1_pad_detector_sample(mk1_pad_detector *state, uint16_t adc,
 MK1_API int mk1_pad_detector_flush(mk1_pad_detector *state, uint32_t tick,
                                    mk1_pad_events *events);
 
+enum {
+    MK1_STREAM_MAX_EVENTS = 32,
+    MK1_STREAM_SEQUENCE_GAP = 1, MK1_STREAM_TIME_GAP = 2,
+    MK1_STREAM_MALFORMED = 4, MK1_STREAM_DISCONNECT = 8,
+    MK1_STREAM_WATCHDOG = 16, MK1_STREAM_RECONNECT = 32
+};
+typedef struct {
+    mk1_pad_detector pads[MK1_PAD_CHANNELS]; /* indexed by tagged ADC channel */
+    uint32_t generation, clock_tick, last_frame_tick, last_sequence, max_gap_ticks;
+    uint8_t connected, has_frame;
+} mk1_pad_stream;
+typedef struct {
+    mk1_control_event events[MK1_STREAM_MAX_EVENTS];
+    uint8_t count, reset_flags;
+} mk1_stream_events;
+
+/* Config indexed by raw channel. Unique control IDs and (MIDI channel,note)
+ * pairs are required; this adapter does not allocate overlapping MIDI voices. */
+MK1_API int mk1_pad_stream_init(mk1_pad_stream *state, const mk1_pad_config *configs,
+                                size_t count, uint32_t max_gap_ticks);
+/* Connect increments generation; attach it to callbacks to reject old sessions.
+ * A reconnect flushes active notes. Caller must consume the returned batch. */
+MK1_API int mk1_pad_stream_connect(mk1_pad_stream *state, uint32_t tick, mk1_stream_events *events);
+MK1_API int mk1_pad_stream_disconnect(mk1_pad_stream *state, uint32_t tick, mk1_stream_events *events);
+/* Caller supplies its own report20 sequence and monotonic arrival clock.
+ * No hardware sequence counter exists in the parsed report. Both wrap at 2^32.
+ * Old/duplicate sequences, stale generations, backward time and unrelated IDs
+ * return 0 without mutation. Recoverable gaps return 1 and reset_flags, flush
+ * notes and rearm from quiet. A malformed report20 disconnects with note-offs.
+ * ADC input is max of the two tagged scans per channel, once per arrival tick. */
+MK1_API int mk1_pad_stream_frame(mk1_pad_stream *state, uint32_t generation,
+                                 uint32_t sequence, uint32_t tick,
+                                 const uint8_t *report, size_t length,
+                                 mk1_stream_events *events);
+/* Required caller-driven watchdog, including before the first report.
+ * A timeout disconnects; a fresh connect/generation is needed to resume. */
+MK1_API int mk1_pad_stream_poll(mk1_pad_stream *state, uint32_t tick, mk1_stream_events *events);
+
 #ifdef __cplusplus
 }
 #endif

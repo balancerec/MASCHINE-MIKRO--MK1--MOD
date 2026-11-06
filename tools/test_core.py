@@ -21,7 +21,7 @@ flags = ['-std=c99', '-Wall', '-Wextra', '-Wpedantic', '-Werror', '-O2',
          '-I', str(ROOT/'core/include')]
 library = build/('mk1_core.dll' if os.name == 'nt' else 'libmk1_core.so')
 test = build/('mk1_core_test.exe' if os.name == 'nt' else 'mk1_core_test')
-sources = [str(ROOT/'core/src/mk1_core.c'), str(ROOT/'core/src/mk1_pad.c')]
+sources = [str(ROOT/'core/src'/name) for name in ('mk1_core.c', 'mk1_pad.c', 'mk1_stream.c')]
 subprocess.run(command+flags+sources+[str(ROOT/'core/tests/test_core.c'), '-o', str(test)], check=True)
 subprocess.run(command+flags+(['-fPIC'] if os.name != 'nt' else [])
                +['-DMK1_CORE_SHARED', '-shared']+sources+['-o', str(library)], check=True)
@@ -31,3 +31,4 @@ subprocess.run(command+flags+sources+[str(ROOT/'core/tests/test_pad.c'), '-o', s
 subprocess.run([str(pad_test)], check=True)
 subprocess.run([sys.executable, str(ROOT/'core/tests/compare_models.py'), '--library', str(library)], check=True)
 subprocess.run([sys.executable, str(ROOT/'core/tests/test_pad_detector.py'), '--library', str(library)], check=True)
+subprocess.run([sys.executable, str(ROOT/'core/tests/test_pad_stream.py'), '--library', str(library)], check=True)
