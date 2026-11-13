@@ -1,0 +1,57 @@
+{
+  "host_replay": {
+    "reports_replayed": 40969,
+    "destination": "memory-only",
+    "note_on": 24,
+    "note_off": 24,
+    "final_status": {
+      "phase": "stopped",
+      "reason": "explicit stop",
+      "queued": 0,
+      "possible_notes": 0,
+      "blocked": false,
+      "input_generation": 1,
+      "output_generation": 2,
+      "last_error": null
+    },
+    "real_midi_messages_sent": 0,
+    "hardware_access": false,
+    "parameters_are_experimental": true,
+    "parameters": {
+      "attack": 120,
+      "release": 60,
+      "full_scale": 4095,
+      "peak_us": 10000,
+      "release_us": 10000,
+      "retrigger_us": 30000,
+      "max_gap_us": 250000,
+      "retry_us": 1000000
+    }
+  },
+  "capture_id": "pad-sensitivity-20261105-213841",
+  "capture_sha256": "5273de4dbfb8f44f126fe717b09f382ba0b675480659b1857a9f978df707c53b",
+  "fake_winmm_tests": 7,
+  "coordinator_tests": 10,
+  "real_port_preflight": {
+    "name": "MIKRO MOD FL",
+    "opened": true,
+    "identity_verified_from_handle": true,
+    "closed": true,
+    "midiOutShortMsg_calls": 0
+  },
+  "virtual_port_preparation": {
+    "software": "loopMIDI",
+    "version": "1.0.16.27",
+    "installer_signature": "Valid",
+    "installer_zip_sha256": "975399eb76e2c5a1d553ecd8975ab361261ccab8fd9412b8060b19877cb4e0d5",
+    "restart_required": false,
+    "created_by_user": true,
+    "fl_input_enabled": "user-confirmed"
+  },
+  "live_musical_test": false,
+  "limits": [
+    "Synchronous WinMM may block; coordinator deadlines do not preempt a driver call.",
+    "Port metadata is not a persistent GUID.",
+    "No real note delivery or latency has been tested."
+  ]
+}

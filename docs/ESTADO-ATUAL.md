@@ -1,4 +1,4 @@
-# Estado atual — 05/11/2026
+# Estado atual — 06/11/2026
 
 Esta é a referência atual; os relatórios em `firmware-research/` conservam detalhes e histórico.
 
@@ -21,9 +21,31 @@ Esta é a referência atual; os relatórios em `firmware-research/` conservam de
 - PWM LEDs: 13.560 passos comparados em 339 cenários, cobrindo 693 endereços de instrução. É um interpretador limitado, não um emulador completo.
 - Boot e caminho DFU do atualizador estudados; upload DFU da unidade retornou zero bytes. CRC correto não comprova aceitação/boot de imagem modificada.
 
+## Implementado no host em C99
+
+`core/` contém encoder bruto, leitura do encoder HID01, PWM de 64 posições e parser HID20 com tags de canal. Sem heap, USB, serviço NI ou emissão MIDI. Contratos de evento musical e atualização LCD declarados, ainda sem processamento/driver.
+
+Build local Windows com Zig cc 0.14.1, avisos tratados como erros. Comparações C/Python: 40.960 passos individuais e 10.000 amostras sequenciais do encoder; 339 cenários/13.560 eventos PWM; 256 pares HID; fixture física de dez passos e dois cliques; 100 relatórios de pads sintéticos. Isso testa equivalência com os modelos, não inicialização no alvo.
+
+O detector próprio experimental em `core/src/mk1_pad.c` acrescenta ataque, janela de pico, velocity linear configurável, histerese, soltura temporizada, bloqueio de novo ataque e limpeza explícita. Oito testes de comportamento cobrem as 3.996 amplitudes sintéticas de pico de 100–4095, sustentação, ruído, configuração inválida, rotas independentes e passagem do temporizador por zero. Não é tradução do processador musical NI.
+
+Replay local de 40.969 relatórios da captura dos quatro cantos: 24 NOTE_ON e 24 NOTE_OFF, seis por pad, sem liberação pendente no flush. Os parâmetros foram de ensaio e não foram aplicados ao equipamento/FL. Resumo público em `PAD-DETECTOR-VALIDACAO.json`; captura original permanece local. Não há integração ao vivo desse detector.
+
+O adaptador C `mk1_stream.c` agora liga HID20 ao detector dos 16 canais, com geração de sessão, sequência atribuída no host, ordenação temporal, gaps e watchdog chamado pelo laço chamador. Onze testes incluem 4.000 operações aleatórias com falhas e verificação de balanço de notas. O caminho nativo completo repetiu 24 pares nos dados dos quatro cantos, sem notas pendentes antes de desconectar. Continua offline: não há loop USB/MIDI de produção nem garantia de entrega a um sintetizador. Resumo em `PAD-STREAM-VALIDACAO.json`.
+
+A fila em `mk1_midi.c` codifica NOTE_ON/OFF, limita 64 mensagens, acompanha possíveis notas e bloqueia novos ataques após entrega incerta. Um callback síncrono modela aceitação, certeza de não envio e resultado incerto, sem confirmação do sintetizador. Onze testes incluem 2.000 operações com falhas e um watchdog que cancela 15 ataques ainda não enviados depois de aceitar somente um. O replay completo gerou 24 mensagens NOTE_ON e 24 NOTE_OFF no receptor em memória, sem porta real. Resumo em `MIDI-OUTPUT-VALIDACAO.json`.
+
+## Backend Windows e coordenação
+
+`host/mk1_host` acrescenta backend WinMM com nome explícito, conferência do endpoint aberto, falha conservadora como entrega incerta e coordenador serializado. Sete testes de API falsa e dez do coordenador passaram localmente. A ligação ctypes verifica versão/tamanhos da ABI antes de usar os estados. O replay pelo coordenador recebeu 40.969 relatórios e produziu 24 pares em memória, parando sem fila ou notas pendentes.
+
+loopMIDI 1.0.16.27 instalado por solicitação do usuário, sem reinício; porta `MIKRO MOD FL` criada pelo usuário e confirmada na enumeração WinMM. Abertura/conferência/fechamento real passaram sem chamadas de envio de notas. O usuário confirmou a entrada habilitada no FL como generic controller. Não houve ensaio musical ao vivo. Resumo em `HOST-VALIDACAO.json`.
+
+O backend WinMM direto é síncrono; agora há `SupervisedMIDI` em processo separado, sem reutilização de IPC após término forçado. O leitor HID também foi isolado, com buffer de capacidade limitada, verificação de idade e parada em falhas. O runner experimental é limitado a 60 segundos e usa memória por padrão; modo live exige destino e confirmação de isolamento da entrada NI. Quinze testes novos passaram (nove de processos com dispositivos falsos e seis do laço). Leitura real de seis segundos recebeu 4.499 relatórios, com idade máxima de fila observada 20.246 µs e parada limpa; nenhuma porta MIDI foi aberta nesse ensaio. Outro teste abriu/fechou a porta virtual no processo MIDI sem notas. Resumo em `SUPERVISION-VALIDACAO.json`. Não há ensaio musical real ou garantia de latência/ACK físico.
+
 ## Lacunas e entregas inexistentes
 
-Sem backup integral da flash, bootloader específico recuperado, OTP lida, ferramenta de recuperação comprovada, toolchain de alvo validado ou firmware própria compilada. Sem esquema completo, identificação inequívoca do ADC/controlador LCD ou mapeamento físico de tiles/pinos. Ainda não há núcleo C nem processamento musical próprio completo dos pads.
+Sem backup integral da flash, bootloader específico recuperado, OTP lida, ferramenta de recuperação comprovada, toolchain de alvo validado ou firmware própria compilada para XMOS. Sem esquema completo, identificação inequívoca do ADC/controlador LCD ou mapeamento físico de tiles/pinos. O núcleo C, detector e backend inicial existem no host; pressão contínua, integração MIDI ao vivo e calibração musical completa dos pads continuam pendentes.
 
 Não há dados padronizados dos 16 pads para curva global de velocity. Os dados pós-limpeza não quantificam melhora sem um ensaio anterior equivalente. O monitor HID da página e o script MIDI do FL são caminhos diferentes; a ponte não substitui o serviço NI como fonte MIDI.
 
